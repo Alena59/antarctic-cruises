@@ -1,0 +1,44 @@
+.booking {
+  padding: 50px 0;
+  background: url("../img/booking/booking-desk.jpg") center/cover no-repeat;
+}
+
+.booking .container {
+  display: flex;
+  column-gap: 5%;
+}
+
+.booking__inner {
+  padding-left: 45px;
+}
+
+.booking__inner p {
+  max-width: 360px;
+}
+
+.booking form {
+  padding: 50px;
+  display: flex;
+  width: 403px;
+  background: $color-tangaroa;
+  color: $color-alice-blue;
+  flex-direction: column;
+}
+
+.booking fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.booking legend {
+  margin-bottom: 35px;
+}
+
+// .booking input,
+// .booking textarea {
+//   width: 303px;
+// }

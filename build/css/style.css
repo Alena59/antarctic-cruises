@@ -613,8 +613,7 @@ button,
 }
 
 .container {
-  width: 100%;
-  max-width: 1920px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 40px;
 }
@@ -1273,6 +1272,177 @@ button,
   color: #15ab07;
 }
 
+.header {
+  padding-top: 35px;
+  background: url("../img/intro/intro-desk.jpg") center/cover no-repeat;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.nav__list {
+  list-style-type: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 33px;
+}
+
+.nav a {
+  color: #f9fbfd;
+}
+
+.intro {
+  padding-top: 210px;
+  padding-bottom: 283px;
+}
+
+.description {
+  padding: 186px 0;
+}
+
+.description .container {
+  position: relative;
+}
+
+.description__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-width: 512px;
+}
+
+.description__content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 40px;
+  width: 560px;
+  height: 301px;
+  background: url("../img/description/penguins-desk.jpg") no-repeat top right/contain;
+}
+
+.advantages {
+  padding: 120px 0;
+}
+
+.advantages .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.advantages h2 {
+  max-width: 550px;
+  margin: 0 0 60px 0;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+}
+
+.advantages__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 2.8%;
+  grid-row-gap: 27px;
+}
+
+.catalog {
+  padding: 95px 0 120px 0;
+}
+
+.catalog__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 2.8%;
+  grid-row-gap: 27px;
+}
+
+.booking {
+  padding: 50px 0;
+  background: url("../img/booking/booking-desk.jpg") center/cover no-repeat;
+}
+
+.booking .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 5%;
+  -moz-column-gap: 5%;
+  column-gap: 5%;
+}
+
+.booking__inner {
+  padding-left: 45px;
+}
+
+.booking__inner p {
+  max-width: 360px;
+}
+
+.booking form {
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 403px;
+  background: #011C40;
+  color: #f9fbfd;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.booking fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 20px;
+  border: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.booking legend {
+  margin-bottom: 35px;
+}
+
 /* @mixin hover-focus {
     @media (hover: hover) {
       &:hover:not(.focus-visible) {
@@ -1314,21 +1484,15 @@ button,
   }
 */
 
-@media (max-width: 1439px) {
-  .container {
-    padding: 0 32px;
-  }
-}
-
 @media (max-width: 1023px) {
   .container {
-    padding: 0 24px;
+    padding: 0 45px;
   }
 }
 
 @media (max-width: 767px) {
   .container {
-    padding: 0 16px;
+    padding: 0 15px;
   }
 
   .modal__wrapper {

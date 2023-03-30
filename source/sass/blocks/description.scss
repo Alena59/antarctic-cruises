@@ -1,0 +1,23 @@
+.description {
+  padding: 186px 0;
+}
+
+.description .container {
+  position: relative;
+}
+
+.description__content {
+  display: flex;
+  flex-direction: column;
+  max-width: 512px;
+}
+
+.description__content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 40px;
+  width: 560px;
+  height: 301px;
+  background: url("../img/description/penguins-desk.jpg") no-repeat top right/contain;
+}

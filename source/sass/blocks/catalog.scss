@@ -1,0 +1,14 @@
+.catalog {
+  padding: 95px 0 120px 0;
+}
+
+.catalog__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 2.8%;
+  grid-row-gap: 27px;
+}
