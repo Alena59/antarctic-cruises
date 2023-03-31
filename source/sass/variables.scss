@@ -29,7 +29,7 @@ $fz-default:                        16px;
 // https://www.artlebedev.ru/kovodstvo/sections/159/#13
 $ff-rouble:                         "Rouble", "Arial", sans-serif;
 
-$ff-placeholder:                    "Placeholder", "Arial", sans-serif;
+$ff-montserrat:                    "Montserrat", "Arial", sans-serif;
 
 // Animation
 // ---------------------------------
@@ -48,13 +48,14 @@ $trans-600:                         0.6s $tf-default;
 $vp-320:                            320px;
 $vp-375:                            375px;
 $vp-768:                            768px;
+$vp-900:                            900px;
 $vp-1024:                           1024px;
 $vp-1280:                           1280px;
 $vp-1440:                           1440px;
 $vp-1920:                           1920px;
+$vp-1160:                           1160px;
 
 // Retina
 // ---------------------------------
 
-$retina-dpi:                        144dpi;
-$retina-dppx:                       1.5dppx;
+$retina-dppx:                       2dppx;

@@ -11,4 +11,8 @@
   grid-template-rows: 1fr;
   grid-column-gap: 2.8%;
   grid-row-gap: 27px;
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
 }

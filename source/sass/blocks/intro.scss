@@ -1,4 +1,23 @@
 .intro {
   padding-top: 210px;
   padding-bottom: 283px;
+
+  & h2 {
+    margin: 0 0 30px 0;
+    color: $color-alice-blue;
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 66px;
+
+    @include vp-767 {
+      font-size: 36px;
+      line-height: 45px;
+    }
+  }
+
+  & p {
+    margin: 0;
+    color: $color-alice-blue;
+    font-size: 20px;
+  }
 }

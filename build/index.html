@@ -7,14 +7,15 @@
     <meta name="description" content="Круизы в Антарктику. Волшебный мир айсбергов и пингвинов.">
     <title>“Круизы в Антарктику”</title>
     <link rel="stylesheet" href="css/style.min.css">
-    <!-- <link rel="preload" href="./fonts/ptmonoregular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="./fonts/robotocondensedregular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="./fonts/robotocondensedbold.woff2" type="font/woff2" as="font" crossorigin="anonymous"> -->
+    <link rel="preload" href="fonts/montserrat-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-medium.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-semibold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/montserrat-bold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   </head>
-  <body>
+  <body id="body">
     <div class="wrapper">
-      <header class="header">
-        <div class="container">
+       <header class="header is-close is-nojs">
+        <div class="container header__container">
           <a class="header__link-logo" href="index.html">
             <svg class="header__logo-icon" width="70" height="38">
               <use xlink:href="./img/sprite.svg#logo"></use>
@@ -35,6 +36,9 @@
                 <a href="#contacts">Контакты</a>
               </li>
             </ul>
+            <button class="nav__toggle" type="button">
+              <span class="visually-hidden">Открыть меню.</span>
+            </button>
           </nav>
         </div>
         <section class="intro">
@@ -56,7 +60,7 @@
             </div>
           </div>
         </section>
-      <section class="advantages">
+      <section class="advantages" id="advantages">
         <div class="container">
           <h2>Преимущества</h2>
           <ul class="advantages__list">
@@ -76,18 +80,13 @@
         </div>
       </section>
 
-      <section class="catalog">
+      <section class="catalog" id="catalog">
         <div class="container">
           <h2>Ближайшие круизы</h2>
           <ul class="catalog__list">
             <li class="catalog__item">
               <h3>Круиз “Астория”</h3>
               <picture>
-                <!-- <source type="image/webp" media="(max-width: 500px)" srcset="img/catalog/card-mob1.webp 1x, img/catalog/card-mob1@2x.webp 2x">
-                <source type="image/webp" media="(max-width: 1023px)" srcset="img/catalog/card-tab1.webp 1x, img/catalog/card-tab1@2x.webp 2x">
-                <source type="image/webp" srcset="img/catalog/card-desk1.webp 1x, img/catalog/card-desk1@2x.webp 2x"> -->
-                <!-- <source media="(max-width: 500px)" srcset="img/catalog/card.jpg 1x, img/catalog/card-mob1@2x.jpg 2x">
-                <source media="(max-width: 1023px)" srcset="img/catalog/card.jpg 1x, img/catalog/card-tab1@2x.jpg 2x"> -->
                 <img loading="lazy" src="img/catalog/card1.jpg" srcset="img/catalog/card1@2x.jpg 2x" width="260" height="386" alt="Круизы в Антарктику.">
               </picture>
               <p>Маршрут</p>
@@ -103,11 +102,6 @@
             <li class="catalog__item">
               <h3>Круиз “Элайн”</h3>
               <picture>
-                <!-- <source type="image/webp" media="(max-width: 500px)" srcset="img/catalog/card-mob1.webp 1x, img/catalog/card-mob1@2x.webp 2x">
-                <source type="image/webp" media="(max-width: 1023px)" srcset="img/catalog/card-tab1.webp 1x, img/catalog/card-tab1@2x.webp 2x">
-                <source type="image/webp" srcset="img/catalog/card-desk1.webp 1x, img/catalog/card-desk1@2x.webp 2x">
-                <source media="(max-width: 500px)" srcset="img/catalog/card-mob1.jpg 1x, img/catalog/card-mob1@2x.jpg 2x">
-                <source media="(max-width: 1023px)" srcset="img/catalog/card-tab1.jpg 1x, img/catalog/card-tab1@2x.jpg 2x"> -->
                 <img loading="lazy" src="img/catalog/card4.jpg" srcset="img/catalog/card4@2x.jpg 2x" width="260" height="386" alt="Круизы в Антарктику.">
               </picture>
               <p>Маршрут</p>
@@ -123,11 +117,6 @@
             <li class="catalog__item">
               <h3>Круиз “Атлантис”</h3>
               <picture>
-                <!-- <source type="image/webp" media="(max-width: 500px)" srcset="img/catalog/card-mob1.webp 1x, img/catalog/card-mob1@2x.webp 2x">
-                <source type="image/webp" media="(max-width: 1023px)" srcset="img/catalog/card-tab1.webp 1x, img/catalog/card-tab1@2x.webp 2x">
-                <source type="image/webp" srcset="img/catalog/card-desk1.webp 1x, img/catalog/card-desk1@2x.webp 2x">
-                <source media="(max-width: 500px)" srcset="img/catalog/card-mob1.jpg 1x, img/catalog/card-mob1@2x.jpg 2x">
-                <source media="(max-width: 1023px)" srcset="img/catalog/card-tab1.jpg 1x, img/catalog/card-tab1@2x.jpg 2x"> -->
                 <img loading="lazy" src="img/catalog/card3.jpg" srcset="img/catalog/card3@2x.jpg 2x" width="260" height="386" alt="Круизы в Антарктику.">
               </picture>
               <p>Маршрут</p>
@@ -143,11 +132,6 @@
             <li class="catalog__item">
               <h3>Круиз “Одиссей”</h3>
               <picture>
-                <!-- <source type="image/webp" media="(max-width: 500px)" srcset="img/catalog/card-mob1.webp 1x, img/catalog/card-mob1@2x.webp 2x">
-                <source type="image/webp" media="(max-width: 1023px)" srcset="img/catalog/card-tab1.webp 1x, img/catalog/card-tab1@2x.webp 2x">
-                <source type="image/webp" srcset="img/catalog/card-desk1.webp 1x, img/catalog/card-desk1@2x.webp 2x">
-                <source media="(max-width: 500px)" srcset="img/catalog/card-mob1.jpg 1x, img/catalog/card-mob1@2x.jpg 2x">
-                <source media="(max-width: 1023px)" srcset="img/catalog/card-tab1.jpg 1x, img/catalog/card-tab1@2x.jpg 2x"> -->
                 <img loading="lazy" src="img/catalog/card4.jpg" srcset="img/catalog/card4@2x.jpg 2x" width="260" height="386" alt="Круизы в Антарктику.">
               </picture>
               <p>Маршрут</p>
@@ -163,11 +147,6 @@
             <li class="catalog__item">
               <h3>Круиз “Олимпия”</h3>
               <picture>
-                <!-- <source type="image/webp" media="(max-width: 500px)" srcset="img/catalog/card-mob1.webp 1x, img/catalog/card-mob1@2x.webp 2x">
-                <source type="image/webp" media="(max-width: 1023px)" srcset="img/catalog/card-tab1.webp 1x, img/catalog/card-tab1@2x.webp 2x">
-                <source type="image/webp" srcset="img/catalog/card-desk1.webp 1x, img/catalog/card-desk1@2x.webp 2x">
-                <source media="(max-width: 500px)" srcset="img/catalog/card-mob1.jpg 1x, img/catalog/card-mob1@2x.jpg 2x">
-                <source media="(max-width: 1023px)" srcset="img/catalog/card-tab1.jpg 1x, img/catalog/card-tab1@2x.jpg 2x"> -->
                 <img loading="lazy" src="img/catalog/card4.jpg" srcset="img/catalog/card4@2x.jpg 2x" width="260" height="386" alt="Круизы в Антарктику.">
               </picture>
               <p>Маршрут</p>
@@ -183,11 +162,6 @@
             <li class="catalog__item">
               <h3>Круиз “Аврора”</h3>
               <picture>
-                <!-- <source type="image/webp" media="(max-width: 500px)" srcset="img/catalog/card-mob1.webp 1x, img/catalog/card-mob1@2x.webp 2x">
-                <source type="image/webp" media="(max-width: 1023px)" srcset="img/catalog/card-tab1.webp 1x, img/catalog/card-tab1@2x.webp 2x">
-                <source type="image/webp" srcset="img/catalog/card-desk1.webp 1x, img/catalog/card-desk1@2x.webp 2x">
-                <source media="(max-width: 500px)" srcset="img/catalog/card-mob1.jpg 1x, img/catalog/card-mob1@2x.jpg 2x">
-                <source media="(max-width: 1023px)" srcset="img/catalog/card-tab1.jpg 1x, img/catalog/card-tab1@2x.jpg 2x"> -->
                 <img loading="lazy" src="img/catalog/card6.jpg" srcset="img/catalog/card6@2x.jpg 2x" width="260" height="386" alt="Круизы в Антарктику.">
               </picture>
               <p>Маршрут</p>
@@ -203,11 +177,6 @@
             <li class="catalog__item">
               <h3>Круиз “Леонор”</h3>
               <picture>
-                <!-- <source type="image/webp" media="(max-width: 500px)" srcset="img/catalog/card-mob1.webp 1x, img/catalog/card-mob1@2x.webp 2x">
-                <source type="image/webp" media="(max-width: 1023px)" srcset="img/catalog/card-tab1.webp 1x, img/catalog/card-tab1@2x.webp 2x">
-                <source type="image/webp" srcset="img/catalog/card-desk1.webp 1x, img/catalog/card-desk1@2x.webp 2x">
-                <source media="(max-width: 500px)" srcset="img/catalog/card-mob1.jpg 1x, img/catalog/card-mob1@2x.jpg 2x">
-                <source media="(max-width: 1023px)" srcset="img/catalog/card-tab1.jpg 1x, img/catalog/card-tab1@2x.jpg 2x"> -->
                 <img loading="lazy" src="img/catalog/card7.jpg" srcset="img/catalog/card7@2x.jpg 2x" width="260" height="386" alt="Круизы в Антарктику.">
               </picture>
               <p>Маршрут</p>
@@ -223,11 +192,6 @@
             <li class="catalog__item">
               <h3>Круиз “Минион - 1”</h3>
               <picture>
-                <!-- <source type="image/webp" media="(max-width: 500px)" srcset="img/catalog/card-mob1.webp 1x, img/catalog/card-mob1@2x.webp 2x">
-                <source type="image/webp" media="(max-width: 1023px)" srcset="img/catalog/card-tab1.webp 1x, img/catalog/card-tab1@2x.webp 2x">
-                <source type="image/webp" srcset="img/catalog/card-desk1.webp 1x, img/catalog/card-desk1@2x.webp 2x">
-                <source media="(max-width: 500px)" srcset="img/catalog/card-mob1.jpg 1x, img/catalog/card-mob1@2x.jpg 2x">
-                <source media="(max-width: 1023px)" srcset="img/catalog/card-tab1.jpg 1x, img/catalog/card-tab1@2x.jpg 2x"> -->
                 <img loading="lazy" src="img/catalog/card8.jpg" srcset="img/catalog/card8@2x.jpg 2x" width="260" height="386" alt="Круизы в Антарктику.">
               </picture>
               <p>Маршрут</p>
@@ -269,7 +233,7 @@
           </form>
         </div>
       </section>
-      <section class="contacts">
+      <section class="contacts" id="contacts">
         <h2 class="visually-hidden">Контакты.</h2>
         <div class="container">
           <div class="contacts__map">
@@ -286,7 +250,7 @@
       </section>
     </main>
       <footer class="footer">
-        <div class="footer__container container">
+        <div class="container">
           <div class="footer__inner">
             <a class="footer__link-logo" href="index.html">
               <svg class="header__logo-icon" width="70" height="38">
@@ -296,16 +260,16 @@
             <nav class="footer__nav nav">
               <ul class="nav__list">
                 <li class="nav__item">
-                  <a href="#">О Компании</a>
+                  <a href="#">Преимущества</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#">Продукты</a>
+                  <a href="#">Направления</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#">Производство печатных плат</a>
+                  <a href="#">Ближайшие круизы</a>
                 </li>
                 <li class="nav__item">
-                  <a href="#">Монтаж печатных плат</a>
+                  <a href="#">Контакты</a>
                 </li>
               </ul>
             </nav>

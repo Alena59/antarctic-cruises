@@ -1,5 +1,5 @@
 @mixin retina {
-  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+  @media (min-resolution: $retina-dppx) {
     @content;
   }
 }
@@ -38,17 +38,31 @@
 
 // Desktop first
 
-@mixin vp-1919 {
-  @media (max-width: ($vp-1920 - 1px)) {
+// @mixin vp-1919 {
+//   @media (max-width: ($vp-1920 - 1px)) {
+//     @content;
+//   }
+// }
+
+// @mixin vp-1439 {
+//   @media (max-width: ($vp-1440 - 1px)) {
+//     @content;
+//   }
+// }
+
+
+@mixin vp-1024 {
+  @media (min-width: $vp-1024) {
     @content;
   }
 }
 
-@mixin vp-1439 {
-  @media (max-width: ($vp-1440 - 1px)) {
+@mixin vp-1160 {
+  @media (min-width: $vp-1160) {
     @content;
   }
 }
+
 
 @mixin vp-1279 {
   @media (max-width: ($vp-1280 - 1px)) {
@@ -58,6 +72,18 @@
 
 @mixin vp-1023 {
   @media (max-width: ($vp-1024 - 1px)) {
+    @content;
+  }
+}
+
+@mixin vp-900 {
+  @media (min-width: $vp-900) {
+    @content;
+  }
+}
+
+@mixin vp-768 {
+  @media (min-width: $vp-768) {
     @content;
   }
 }

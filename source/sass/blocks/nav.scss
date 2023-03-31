@@ -3,8 +3,132 @@
   padding: 0;
   display: flex;
   gap: 33px;
+  margin: 0;
+
+  @include vp-767 {
+    flex-direction: column;
+  }
 }
 
 .nav a {
   color: $color-alice-blue;
+  font-weight: 500;
+  line-height: 20px;
+
+  @include vp-1023 {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  @include vp-767 {
+    color: $color-tangaroa;
+  }
 }
+
+.nav__toggle {
+  display: none;
+
+  @include vp-767 {
+    display: block;
+    position: relative;
+    top: 12px;
+    width: 30px;
+    height: 30px;
+    z-index: 6;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+  }
+}
+
+.is-close .nav__toggle {
+  @include vp-767 {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 3px;
+      width: 24px;
+      height: 2px;
+      background-color:$color-alice-blue;
+      box-shadow: 0 5px 0 0 $color-alice-blue, 0 10px 0 0 $color-alice-blue;
+    }
+  }
+}
+
+.is-open .nav__toggle {
+  @include vp-767 {
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 8px;
+    width: 30px;
+    height: 2px;
+    background-color: $color-tangaroa;
+    // transition: transform 0.2s ease-in;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+  }
+}
+
+.is-close .nav__list {
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.is-open .nav__list {
+  // display: block;
+  @include vp-767 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 75px 35px 30px 15px;
+  height: 100%;
+  width: 89%;
+  text-align: start;
+  background-color: $color-alice-blue;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  }
+}
+
+// .is-open .nav__list {
+//   @include vp-767 {
+//     position: absolute;
+//     padding: 75px 15px;
+//     top: 0;
+//     left: 0;
+//     // left: 36px;
+//     width: 100%;
+//     height: 100%;
+//     z-index: 5;
+//     background-color: $color-alice-blue;
+//   }
+// }
+
+// .nav--nojs .site-list--menu {
+//   display: block;
+// }
+
+// .nav--nojs {
+//   flex-direction: column;
+//   margin-bottom: 212px;
+// }
+
+// .is-nojs .site-list {
+//   position: absolute;
+//   width: 100%;
+//   top: 60px;
+//   left: 0;
+//   display: block;
+// }
