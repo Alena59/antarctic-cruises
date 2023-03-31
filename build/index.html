@@ -14,7 +14,7 @@
   </head>
   <body id="body">
     <div class="wrapper">
-       <header class="header is-close is-nojs">
+      <header class="header is-close is-nojs">
         <div class="container header__container">
           <a class="header__link-logo" href="index.html">
             <svg class="header__logo-icon" width="70" height="38">
@@ -215,18 +215,24 @@
             <h3>Раннее бронирование</h3>
             <p>Забронируйте тур за 3-6 месяцев до даты выезда и сэкономьте до 50%</p>
           </aside>
-          <form action="https://echo.htmlacademy.ru/" method="post">
+          <form action="https://echo.htmlacademy.ru/" method="post" id="form">
             <fieldset class="booking__inputs-wrapper">
               <legend>Оставьте заявку и мы свяжемся с вами в ближайшее время</legend>
-              <label for="input-name" class="visually-hidden"></label>
-              <input type="text" name="username" placeholder="Имя" id="input-name" autocomplete="off" required>
-              <label for="input-phone" class="visually-hidden"></label>
-              <input type="tel" name="phone" placeholder="Телефон" id="input-phone" autocomplete="off" data-validate-type="phone" required>
-              <label for="comment" class="visually-hidden"></label>
-              <textarea name="comment" wrap="soft" placeholder="Ваш вопрос" id="comment"></textarea>
+              <div class="booking__box">
+                <label for="input-name" class="visually-hidden"></label>
+                <input type="text" name="username" placeholder="Имя" id="input-name" autocomplete="off" data-required="true" required>
+              </div>
+              <div class="booking__box">
+                <label for="input-phone" class="visually-hidden"></label>
+                <input type="tel" name="phone" placeholder="Телефон" id="input-phone" autocomplete="off" data-validate-type="phone" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{1,10}$" title="Только цифры" data-required="true" required>
+              </div>
+              <div class="booking__box">
+                <input type="email" name="email" placeholder="Email" id="email" pattern="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" title="Введите email в формате xxxx@xx.xx" data-required="true" required>
+                <label for="email"></label>
+              </div>
             </fieldset>
             <div class="booking__checkbox">
-              <input class="visually-hidden" type="checkbox" name="feedback-agreement" id="feedback-agreement" checked required>
+              <input class="visually-hidden" type="checkbox" name="feedback-agreement" id="feedback-agreement" data-required="true" checked required>
               <label for="feedback-agreement">Я согласен на обработку моих персональных данных</label>
             </div>
             <button class="booking__btn btn" type="submit">Оставить заявку</button>
@@ -249,60 +255,60 @@
         </div>
       </section>
     </main>
-      <footer class="footer">
-        <div class="container">
-          <div class="footer__inner">
-            <a class="footer__link-logo" href="index.html">
-              <svg class="header__logo-icon" width="70" height="38">
-                <use xlink:href="./img/sprite.svg#logo"></use>
-              </svg>
-            </a>
-            <nav class="footer__nav nav">
-              <ul class="nav__list">
-                <li class="nav__item">
-                  <a href="#">Преимущества</a>
-                </li>
-                <li class="nav__item">
-                  <a href="#">Направления</a>
-                </li>
-                <li class="nav__item">
-                  <a href="#">Ближайшие круизы</a>
-                </li>
-                <li class="nav__item">
-                  <a href="#">Контакты</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <ul class="footer__social-list social">
-            <li class="social__item">
-              <a href="#">
-                <svg class="social__icon" width="12" height="20">
-                  <use xlink:href="./img/sprite.svg#ok-icon"></use>
-                </svg>
-                <span class="visually-hidden">Одноклассники.</span>
-              </a>
-            </li>
-            <li class="social__item">
-              <a href="#">
-                <svg class="social__icon" width="20" height="20">
-                  <use xlink:href="./img/sprite.svg#dzen-icon"></use>
-                </svg>
-                <span class="visually-hidden">Яндекс дзен.</span>
-              </a>
-            </li>
-            <li class="social__item">
-              <a href="#">
-                <svg class="social__icon" width="20" height="20">
-                  <use xlink:href="./img/sprite.svg#reddit-icon"></use>
-                </svg>
-                <span class="visually-hidden">Reddit.</span>
-              </a>
-            </li>
-          </ul>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <a class="footer__link-logo" href="index.html">
+            <svg class="footer__link-icon" width="70" height="38">
+              <use xlink:href="./img/sprite.svg#logo"></use>
+            </svg>
+          </a>
+          <nav class="nav">
+            <ul class="nav__list footer__nav-list">
+              <li class="nav__item">
+                <a href="#">Преимущества</a>
+              </li>
+              <li class="nav__item">
+                <a href="#">Направления</a>
+              </li>
+              <li class="nav__item">
+                <a href="#">Ближайшие круизы</a>
+              </li>
+              <li class="nav__item">
+                <a href="#">Контакты</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-      </footer>
-    </div>
+        <ul class="footer__social-list social">
+          <li class="social__item">
+            <a href="#">
+              <svg class="social__icon" width="12" height="20">
+                <use xlink:href="./img/sprite.svg#ok-icon"></use>
+              </svg>
+              <span class="visually-hidden">Одноклассники.</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="#">
+              <svg class="social__icon" width="20" height="20">
+                <use xlink:href="./img/sprite.svg#dzen-icon"></use>
+              </svg>
+              <span class="visually-hidden">Яндекс дзен.</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a href="#">
+              <svg class="social__icon" width="20" height="20">
+                <use xlink:href="./img/sprite.svg#reddit-icon"></use>
+              </svg>
+              <span class="visually-hidden">Reddit.</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </div>
     <template id="success">
       <div class="success">
         <p class="success__message">Ваше объявление<br>успешно размещено!</p>

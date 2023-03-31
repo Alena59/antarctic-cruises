@@ -20,6 +20,15 @@
   }
 }
 
+.booking input {
+  width: 100%;
+  padding: 11px 16px;
+}
+
+.booking__box {
+  position: relative;
+}
+
 .booking form {
   padding: 50px;
   display: flex;

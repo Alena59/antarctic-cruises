@@ -1,15 +1,38 @@
 .header {
   overflow: hidden;
   padding-top: 35px;
-  background: url("../img/intro/intro-desk.jpg") center/cover no-repeat;
-  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 
-  @include retina {
-    background: url("../img/intro/intro-desk@2x.jpg") center/cover no-repeat;
+  // @include retina {
+  //   background: url("../img/intro/intro-desk@2x.jpg") center/cover no-repeat;
+  // }
+
+  // @include vp-1023 {
+  //   filter: none;
+  // }
+
+  @include vp-1024 {
+    background: url("../img/intro/intro-desk.jpg") center/cover no-repeat;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+
+    @include retina {
+      background: url("../img/intro/intro-desk@2x.jpg") center/cover no-repeat;
+    }
   }
 
-  @include vp-767 {
-    filter: none;
+  @include vp-500 {
+    background: url("../img/intro/intro-tab.jpg") center/cover no-repeat;
+
+    @include retina {
+      background: url("../img/intro/intro-tab@2x.jpg") center/cover no-repeat;
+    }
+  }
+
+  @include vp-499 {
+    background: url("../img/intro/intro-mob.jpg") center/cover no-repeat;
+
+    @include retina {
+      background: url("../img/intro/intro-mob@2x.jpg") center/cover no-repeat;
+    }
   }
 }
 
@@ -19,7 +42,19 @@
 }
 
 .header__logo-icon {
+  width: 70px;
+  height: 38px;
   fill: $color-alice-blue;
+
+  @include vp-1023 {
+    width: 38px;
+    height: 20px;
+  }
+
+  @include vp-767 {
+    width: 42px;
+    height: 32px;
+  }
 }
 
 .is-open .header__logo-icon {
@@ -30,9 +65,9 @@
 
 .is-open .header__link-logo {
   @include vp-767 {
-    width: 42px;
-    height: 22px;
     display: block;
+    width: 42px;
+    height: 32px;
     z-index: 7;
     position: relative;
     right: -12%;
@@ -41,13 +76,17 @@
     &::after {
       position: absolute;
       content: "";
-      height: 60px;
+      height: 70px;
       min-width: 240px;
       background-color: $color-alice-blue;
-      top: 0;
-      left: 0;
-      z-index: -1;
+      top: -30px;
+      left: -15px;
+      z-index: -10;
     }
+
+    // &:focus-within::after{
+    //   display: none;
+    // }
   }
   // position: relative;
   // z-index: 20;
