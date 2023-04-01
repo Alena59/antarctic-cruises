@@ -795,119 +795,6 @@ button,
   pointer-events: auto;
 }
 
-.custom-input,
-.custom-textarea {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 530px;
-  padding: 14px 0 28px;
-}
-
-.custom-input label,
-.custom-textarea label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  width: 100%;
-}
-
-.custom-input label input,
-.custom-input label textarea,
-.custom-textarea label input,
-.custom-textarea label textarea {
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  max-width: 300px;
-  min-height: 48px;
-  margin-left: auto;
-  padding: 10px;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  outline: none;
-  -webkit-transition: border 0.3s ease;
-  -o-transition: border 0.3s ease;
-  transition: border 0.3s ease;
-}
-
-.custom-input label input:hover,
-.custom-input label textarea:hover,
-.custom-textarea label input:hover,
-.custom-textarea label textarea:hover {
-  border: 2px solid rgba(0, 0, 0, 0.5);
-}
-
-.custom-input label input:focus,
-.custom-input label textarea:focus,
-.custom-textarea label input:focus,
-.custom-textarea label textarea:focus {
-  border: 2px solid rgba(0, 0, 0, 0.8);
-}
-
-.custom-input__error,
-.custom-textarea__error {
-  position: absolute;
-  right: 0;
-  bottom: 35px;
-  color: #ff1553;
-  opacity: 0;
-  -webkit-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
-}
-
-.custom-input.is-invalid input,
-.custom-input.is-invalid textarea,
-.custom-textarea.is-invalid input,
-.custom-textarea.is-invalid textarea {
-  border: 2px solid #ff1553;
-}
-
-.custom-input.is-invalid input:focus,
-.custom-input.is-invalid input:hover,
-.custom-input.is-invalid textarea:focus,
-.custom-input.is-invalid textarea:hover,
-.custom-textarea.is-invalid input:focus,
-.custom-textarea.is-invalid input:hover,
-.custom-textarea.is-invalid textarea:focus,
-.custom-textarea.is-invalid textarea:hover {
-  border: 2px solid rgba(255, 21, 83, 0.5);
-}
-
-.custom-input.is-valid input,
-.custom-textarea.is-valid input {
-  border: 2px solid #22b259;
-}
-
-.custom-input.is-valid input:focus,
-.custom-input.is-valid input:hover,
-.custom-textarea.is-valid input:focus,
-.custom-textarea.is-valid input:hover {
-  border: 2px solid rgba(34, 178, 89, 0.5);
-}
-
-.custom-input .input-message,
-.custom-textarea .input-message {
-  position: absolute;
-  right: 0;
-  bottom: -5px;
-}
-
-.custom-input .input-message.is-invalid,
-.custom-textarea .input-message.is-invalid {
-  color: #ff0000;
-}
-
-.custom-input .input-message.is-valid,
-.custom-textarea .input-message.is-valid {
-  color: #15ab07;
-}
-
 .custom-toggle {
   position: relative;
   font-size: 18px;
@@ -1460,14 +1347,85 @@ button,
   list-style-type: none;
   padding: 0;
   margin: 0;
+  color: #f9fbfd;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-auto-rows: 386px;
   grid-column-gap: 2.8%;
   grid-row-gap: 27px;
+}
+
+.catalog__item {
+  position: relative;
+  background-color: #011C40;
+  padding: 35px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.catalog__item h3 {
+  margin: 0 0 25px 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.catalog__item a {
+  background-color: #f9fbfd;
+  padding: 14px;
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.catalog__item p {
+  margin: 0 0 10px 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.catalog__item span {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #d8d8d9;
+}
+
+.catalog__item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: block;
+  z-index: 30;
+}
+
+.catalog__item:hover img {
+  display: none;
+  z-index: -1;
+}
+
+.catalog__item a:focus + picture {
+  display: none;
+}
+
+.catalog__content {
+  overflow-y: auto;
+  margin-bottom: 30px;
 }
 
 .booking {
@@ -1482,6 +1440,8 @@ button,
   -webkit-column-gap: 5%;
   -moz-column-gap: 5%;
   column-gap: 5%;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .booking__inner {
@@ -1493,11 +1453,13 @@ button,
 }
 
 .booking input {
-  width: 100%;
+  border: none;
   padding: 11px 16px;
 }
 
 .booking__box {
+  display: -ms-grid;
+  display: grid;
   position: relative;
 }
 
@@ -1506,7 +1468,7 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 403px;
+  max-width: 403px;
   background: #011C40;
   color: #f9fbfd;
   -webkit-box-orient: vertical;
@@ -1858,6 +1820,14 @@ button,
     width: 13px;
     height: 2px;
     background-color: #011C40;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transition: -webkit-transform 0.2s ease-in;
+    transition: -webkit-transform 0.2s ease-in;
+    -o-transition: transform 0.2s ease-in;
+    transition: transform 0.2s ease-in;
+    transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
   }
 
   .is-open .nav__toggle::before {
@@ -1929,6 +1899,7 @@ button,
   }
 
   .booking .container {
+    row-gap: 60px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -1936,7 +1907,8 @@ button,
   }
 
   .booking form {
-    width: 100%;
+    max-width: 100%;
+    padding: 30px;
   }
 
   .footer .container {
@@ -1966,41 +1938,6 @@ button,
 }
 
 @media screen and (max-width: 767px) {
-  .custom-input,
-  .custom-textarea {
-    padding: 4px 0 48px;
-    width: 100%;
-  }
-
-  .custom-input label,
-  .custom-textarea label {
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-  }
-
-  .custom-input label input,
-  .custom-input label textarea,
-  .custom-textarea label input,
-  .custom-textarea label textarea {
-    max-width: unset;
-    width: 100%;
-  }
-
-  .custom-input__label,
-  .custom-textarea__label {
-    margin: 0 0 18px 0;
-  }
-
-  .custom-input__error,
-  .custom-textarea__error {
-    bottom: 20px;
-  }
-
   .custom-toggle {
     padding: 14px 0 10px 0;
     width: 100%;

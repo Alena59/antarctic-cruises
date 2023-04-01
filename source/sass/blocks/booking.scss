@@ -6,8 +6,10 @@
 .booking .container {
   display: flex;
   column-gap: 5%;
+  flex-wrap: wrap;
 
   @include vp-767 {
+    row-gap: 60px;
     flex-direction: column;
   }
 }
@@ -21,24 +23,26 @@
 }
 
 .booking input {
-  width: 100%;
+  border: none;
   padding: 11px 16px;
 }
 
 .booking__box {
+  display: grid;
   position: relative;
 }
 
 .booking form {
   padding: 50px;
   display: flex;
-  width: 403px;
+  max-width: 403px;
   background: $color-tangaroa;
   color: $color-alice-blue;
   flex-direction: column;
 
   @include vp-767 {
-    width: 100%;
+    max-width: 100%;
+    padding: 30px;
   }
 }
 
