@@ -1410,13 +1410,15 @@ button,
   color: #f9fbfd;
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  grid-auto-rows: 386px;
+  -ms-grid-columns: (minmax(100px, 1fr))[4];
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
   gap: 30px;
 }
 
 .catalog__item {
   position: relative;
+  height: 28.25vw;
+  max-height: 386px;
   background-color: #011C40;
   padding: 35px 25px;
   display: -webkit-box;
@@ -1784,8 +1786,8 @@ input[type=checkbox]:checked + label::before {
   .description__content::before {
     top: 0;
     right: 40px;
-    width: 324px;
-    height: 174px;
+    width: 40vw;
+    height: 22vw;
     background: url("../img/description/penguins-tab.jpg") no-repeat top right/contain;
   }
 
@@ -1815,15 +1817,17 @@ input[type=checkbox]:checked + label::before {
 
 @media (min-width: 900px) {
   .description__content::before {
-    width: 560px;
-    height: 301px;
-    background: url("../img/description/penguins-desk.jpg") no-repeat top right/72%;
+    width: 40vw;
+    height: 22vw;
+    max-width: 560px;
+    max-height: 301px;
+    background: url("../img/description/penguins-desk.jpg") no-repeat top right/contain;
   }
 }
 
 @media (min-width: 900px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 900px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 900px) and (min-resolution: 2dppx) {
   .description__content::before {
-    background: url("../img/description/penguins-desk@2x.jpg") no-repeat top right/72%;
+    background: url("../img/description/penguins-desk@2x.jpg") no-repeat top right/contain;
   }
 }
 
@@ -1855,18 +1859,6 @@ input[type=checkbox]:checked + label::before {
 
   .booking {
     background: url("../img/booking/booking-desk@2x.jpg") center/cover no-repeat;
-  }
-}
-
-@media (min-width: 1160px) {
-  .description__content::before {
-    background-size: 100%;
-  }
-}
-
-@media (min-width: 1160px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1160px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 1160px) and (min-resolution: 2dppx) {
-  .description__content::before {
-    background-size: 100%;
   }
 }
 
@@ -1943,6 +1935,16 @@ input[type=checkbox]:checked + label::before {
   .catalog h2 {
     font-size: 26px;
     line-height: 39px;
+  }
+
+  .catalog__list {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .catalog__item {
+    height: 50.26vw;
+    max-height: 50.26vw;
   }
 
   .booking .container {
@@ -2153,6 +2155,10 @@ input[type=checkbox]:checked + label::before {
     line-height: 34px;
   }
 
+  .description__content {
+    max-width: 100%;
+  }
+
   .description__content::before {
     bottom: -206px;
     left: 50%;
@@ -2160,7 +2166,7 @@ input[type=checkbox]:checked + label::before {
     -ms-transform: translateX(-145px);
     transform: translateX(-145px);
     width: 290px;
-    height: 156px;
+    height: 155px;
     background: url("../img/description/penguins-mob.jpg") no-repeat top right/contain;
   }
 
@@ -2186,11 +2192,13 @@ input[type=checkbox]:checked + label::before {
   }
 
   .catalog__list {
-    grid-template-columns: repeat(auto-fit, minmax(309px, 1fr));
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 
-  .catalog__list {
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  .catalog__item {
+    height: 120.63vw;
+    max-height: 120.63vw;
   }
 
   .booking {

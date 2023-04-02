@@ -3,6 +3,7 @@ import {iosVhFix} from './utils/ios-vh-fix';
 // import {Form} from './modules/form-validate/form';
 import {initMenu} from './modules/burger-menu';
 import {formSend} from './modules/init-modal';
+import {initScroll} from './modules/init-scroll';
 
 // ---------------------------------
 
@@ -20,6 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initMenu();
+    initScroll();
     // initModals();
     // const form = new Form();
     // window.form = form;

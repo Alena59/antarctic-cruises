@@ -45,16 +45,6 @@ function initMenu() {
     })
   });
 
-  link.forEach(element => {
-    element.addEventListener('keydown', function (e) {
-      if (header.classList.contains('is-open')) {
-        if (e.keyCode === 13) {
-          deactiveMenu();
-        }
-      }
-    })
-  })
-
   navToggle.addEventListener('click', function () {
     if (header.classList.contains('is-close')) {
       header.classList.remove('is-close');

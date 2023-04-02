@@ -44,33 +44,44 @@
     max-width: 324px;
   }
 
+  @include vp-767 {
+    max-width: 100%;
+  }
+
   &::before {
     content: "";
     position: absolute;
 
     @include vp-900 {
-      width: 560px;
-      height: 301px;
-      background: url("../img/description/penguins-desk.jpg") no-repeat top right/72%;
+      // max-width: 560px;
+      // max-height: 301px;
+      width: 40vw;
+      height: 22vw;
+      max-width: 560px;
+      max-height: 301px;
+      background: url("../img/description/penguins-desk.jpg") no-repeat top right/contain;
 
       @include retina {
-        background: url("../img/description/penguins-desk@2x.jpg") no-repeat top right/72%;
+        background: url("../img/description/penguins-desk@2x.jpg") no-repeat top right/contain;
       }
     }
 
-    @include vp-1160 {
-      background-size: 100%;
+    // @include vp-1160 {
+    //   width: 560px;
+    //   height: 301px;
+      // background-size: 100%;
 
-      @include retina {
-        background-size: 100%;
-      }
-    }
+      // @include retina {
+      //   background-size: 100%;
+      // }
+    // }
 
     @include vp-768 {
       top: 0;
       right: 40px;
-      width: 324px;
-      height: 174px;
+      width: 40vw;
+      height: 22vw;
+
       background: url("../img/description/penguins-tab.jpg") no-repeat top right/contain;
 
       @include retina {
@@ -82,8 +93,12 @@
       bottom: -206px;
       left: 50%;
       transform: translateX(-145px);
+      // max-width: 350px;
+      // max-height: 189px;
+      // width: 70vw;
+      // height: 40vw;
       width: 290px;
-      height: 156px;
+      height: 155px;
       background: url("../img/description/penguins-mob.jpg") no-repeat top right/contain;
 
       @include retina {
