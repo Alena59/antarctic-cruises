@@ -38,19 +38,6 @@
 
 // Desktop first
 
-// @mixin vp-1919 {
-//   @media (max-width: ($vp-1920 - 1px)) {
-//     @content;
-//   }
-// }
-
-// @mixin vp-1439 {
-//   @media (max-width: ($vp-1440 - 1px)) {
-//     @content;
-//   }
-// }
-
-
 @mixin vp-1024 {
   @media (min-width: $vp-1024) {
     @content;

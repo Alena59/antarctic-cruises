@@ -74,8 +74,7 @@
     width: 13px;
     height: 2px;
     background-color: $color-tangaroa;
-    transform: rotate(0);
-    transition: transform 0.2s ease-in;
+    // transition: transform 0.2s ease-in;
   }
 
   &::before {

@@ -40,14 +40,19 @@
         }
       }
 
-      // if(input.dataset.maxLength) {
+      if (input.dataset.validateType === 'email') {
+        if (emailTest(input)) {
+          removeError(input)
+          createError(input, `электронная почта введена неправильно!`)
+          result = false
+        }
+      }
 
-      //   if(input.value.length > input.dataset.maxLength) {
-      //     removeError(input)
-      //     createError(input, `Максимальное количество символов: ${input.dataset.maxLength}!`)
-      //     result = false
-      //   }
-      // }
+      if (input.getAttribute("type") === "checkbox" && input.checked === false) {
+         removeError(input)
+         createError(input, `Подтвердите согласие!`)
+         result = false
+      }
 
       if(input.dataset.required == 'true') {
         if(input.value == "") {
@@ -62,9 +67,9 @@
       return !/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/.test(input.value);
     }
 
-    // function emailTest (input) {
-    //   return !/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(input.value);
-    // }
+    function emailTest (input) {
+      return !/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(input.value);
+    }
 
     return result
   }
@@ -84,26 +89,25 @@
     event.preventDefault();
 
     if (validation(this) == true) {
-      alert('все ок')
+      fetch('https://echo.htmlacademy.ru/', {
+        method: 'POST',
+        body: new FormData(event.target)
+      })
+
+        .then((response) => {
+          if (response.ok) {
+            // showMessage();
+            form.reset();
+            alert('форма отправлена')
+
+          } else {
+            alert('ошибка')
+            // showErrorMessage()
+          }
+        })
     }
-  })}
-  //     fetch('https://echo.htmlacademy.ru/', {
-  //       method: 'POST',
-  //       body: new FormData(event.target)
-  //     })
-
-  //       .then((response) => {
-  //         if (response.ok) {
-  //           showMessage();
-  //           form.reset();
-
-  //         } else {
-  //           showErrorMessage()
-  //         }
-  //       })
-  //  }}
-  // )}
-
+    })
+  }
   // function formValidate(form) {
   //   let error = 0;
   //   let formReg = form.querySelectorAll('._reg');

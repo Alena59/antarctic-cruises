@@ -1,6 +1,7 @@
 let header = document.querySelector('.header');
 let navToggle = document.querySelector('.nav__toggle');
 const body = document.getElementById('body');
+const link = document.querySelectorAll('.header__nav a');
 const logo = document.querySelector('.header__link-logo');
 
 header.classList.remove('is-nojs');
@@ -29,7 +30,31 @@ function focus(e) {
   }
 }
 
+const deactiveMenu = () => {
+  body.style.overflow = 'scroll';
+  header.classList.add('is-close');
+  header.classList.remove('is-open');
+}
+
 function initMenu() {
+  link.forEach(element => {
+    element.addEventListener('click', function () {
+      if (header.classList.contains('is-open')) {
+        deactiveMenu();
+      }
+    })
+  });
+
+  link.forEach(element => {
+    element.addEventListener('keydown', function (e) {
+      if (header.classList.contains('is-open')) {
+        if (e.keyCode === 13) {
+          deactiveMenu();
+        }
+      }
+    })
+  })
+
   navToggle.addEventListener('click', function () {
     if (header.classList.contains('is-close')) {
       header.classList.remove('is-close');
