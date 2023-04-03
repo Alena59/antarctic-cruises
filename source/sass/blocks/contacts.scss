@@ -13,9 +13,7 @@
 }
 
 .contacts__address {
-  order: -1;
+  @include vp-767 {
+    order: -1;
+  }
 }
-
-// .contacts__map {
-//   order: 2;
-// }

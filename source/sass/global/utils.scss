@@ -17,14 +17,6 @@
   }
 }
 
-.rouble {
-  font-family: $ff-rouble;
-  /* stylelint-disable */
-  text-transform: lowercase !important;
-  font-weight: 400 !important;
-  /* stylelint-enable */
-}
-
 .visually-hidden {
   position: absolute;
 
@@ -81,13 +73,8 @@
 .error-message {
   position: absolute;
   color: #efc0c0;
-  font-size: 14px;
-  line-height: 20px;
-  bottom: -21px;
+  font-size: 12px;
+  line-height: 18px;
+  bottom: -20px;
   left: 0;
-
-  @include vp-767 {
-    font-size: 12px;
-    line-height: 18px;
-  }
 }

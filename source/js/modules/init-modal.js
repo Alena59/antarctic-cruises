@@ -35,7 +35,7 @@
       if(input.dataset.validateType === 'phone') {
         if(phoneTest(input)) {
           removeError(input)
-          createError(input, `Номер телефона введен неправильно!`)
+          createError(input, `Некорректный номер!`)
           result = false
         }
       }
@@ -43,7 +43,7 @@
       if (input.dataset.validateType === 'email') {
         if (emailTest(input)) {
           removeError(input)
-          createError(input, `электронная почта введена неправильно!`)
+          createError(input, `Некорректный адрес!`)
           result = false
         }
       }

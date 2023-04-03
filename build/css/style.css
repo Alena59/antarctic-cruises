@@ -586,14 +586,6 @@ button,
   flex-grow: 1;
 }
 
-.rouble {
-  font-family: "Rouble", "Arial", sans-serif;
-  /* stylelint-disable */
-  text-transform: lowercase !important;
-  font-weight: 400 !important;
-  /* stylelint-enable */
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -650,9 +642,9 @@ button,
 .error-message {
   position: absolute;
   color: #efc0c0;
-  font-size: 14px;
-  line-height: 20px;
-  bottom: -21px;
+  font-size: 12px;
+  line-height: 18px;
+  bottom: -20px;
   left: 0;
 }
 
@@ -1203,18 +1195,6 @@ button,
   color: #15ab07;
 }
 
-.wrapper {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 .header {
   overflow: hidden;
   padding-top: 35px;
@@ -1275,7 +1255,7 @@ button,
 }
 
 .description {
-  padding: 186px 0;
+  padding: 120px 0 145px;
 }
 
 .description p {
@@ -1289,8 +1269,22 @@ button,
   margin: 0 0 40px 0;
 }
 
+.description img {
+  display: block;
+  margin: 0 auto;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
 .description .container {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  gap: 30px;
 }
 
 .description__content {
@@ -1302,11 +1296,6 @@ button,
   -ms-flex-direction: column;
   flex-direction: column;
   max-width: 512px;
-}
-
-.description__content::before {
-  content: "";
-  position: absolute;
 }
 
 .advantages {
@@ -1405,7 +1394,7 @@ button,
 
 .catalog__list {
   list-style-type: none;
-  padding: 0;
+  padding: 0 15px 0;
   margin: 0;
   color: #f9fbfd;
   display: -ms-grid;
@@ -1661,12 +1650,6 @@ input[type=checkbox]:checked + label::before {
   gap: 100px;
 }
 
-.contacts__address {
-  -webkit-box-ordinal-group: 0;
-  -ms-flex-order: -1;
-  order: -1;
-}
-
 .footer {
   padding: 50px 0;
   background-color: #011C40;
@@ -1723,10 +1706,55 @@ input[type=checkbox]:checked + label::before {
   cursor: pointer;
 }
 
-.map {
+.map__canvas {
   width: 560px;
   height: 306px;
   border: 0;
+}
+
+.address h3 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  margin: 0 0 45px 0;
+}
+
+.address__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 33px;
+  font-style: normal;
+}
+
+.address__list p,
+.address__list a {
+  margin: 0;
+  padding-left: 25px;
+  position: relative;
+}
+
+.address__list p::before,
+.address__list a::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+}
+
+.address__list p::before {
+  content: url("../img/svg/pin-icon.svg");
+  height: 22px;
+}
+
+.contacts__address a::before {
+  content: url("../img/svg/phone.svg");
+  height: 18px;
+  top: 2px;
 }
 
 /* @mixin hover-focus {
@@ -1772,93 +1800,81 @@ input[type=checkbox]:checked + label::before {
 
 @media (min-width: 500px) {
   .header {
-    background: url("../img/intro/intro-tab.jpg") center/cover no-repeat;
+    background: url("../img/intro/intro-tab.jpg") center/cover no-repeat, #276eb5;
   }
 }
 
 @media (min-width: 500px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 500px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 500px) and (min-resolution: 2dppx) {
   .header {
-    background: url("../img/intro/intro-tab@2x.jpg") center/cover no-repeat;
+    background: url("../img/intro/intro-tab@2x.jpg") center/cover no-repeat, #276eb5;
   }
 }
 
 @media (min-width: 768px) {
-  .description__content::before {
-    top: 0;
-    right: 40px;
-    width: 40vw;
-    height: 22vw;
-    background: url("../img/description/penguins-tab.jpg") no-repeat top right/contain;
-  }
-
   .advantages {
-    background: url("../img/advantages/advantages-tab.jpg") center/cover no-repeat;
+    background: url("../img/advantages/advantages-tab.jpg") center/cover no-repeat, #dae8f5;
   }
 
   .booking {
     padding: 100px 0;
-    background: url("../img/booking/booking-tab.jpg") center/cover no-repeat;
+    background: url("../img/booking/booking-tab.jpg") center/cover no-repeat, #d7eefc;
+  }
+
+  .map {
+    background: url("../img/map/map-tab.jpg") center/contain no-repeat;
   }
 }
 
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 768px) and (min-resolution: 2dppx) {
-  .description__content::before {
-    background: url("../img/description/penguins-tab@2x.jpg") no-repeat top right/contain;
-  }
-
   .advantages {
-    background: url("../img/advantages/advantages-tab@2x.jpg") center/cover no-repeat;
+    background: url("../img/advantages/advantages-tab@2x.jpg") center/cover no-repeat, #dae8f5;
   }
 
   .booking {
-    background: url("../img/booking/booking-tab@2x.jpg") center/cover no-repeat;
+    background: url("../img/booking/booking-tab@2x.jpg") center/cover no-repeat, #d7eefc;
   }
-}
 
-@media (min-width: 900px) {
-  .description__content::before {
-    width: 40vw;
-    height: 22vw;
-    max-width: 560px;
-    max-height: 301px;
-    background: url("../img/description/penguins-desk.jpg") no-repeat top right/contain;
-  }
-}
-
-@media (min-width: 900px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 900px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 900px) and (min-resolution: 2dppx) {
-  .description__content::before {
-    background: url("../img/description/penguins-desk@2x.jpg") no-repeat top right/contain;
+  .map {
+    background: url("../img/map/map-tab@2x.jpg") center/contain no-repeat;
   }
 }
 
 @media (min-width: 1024px) {
   .header {
-    background: url("../img/intro/intro-desk.jpg") center/cover no-repeat;
+    background: url("../img/intro/intro-desk.jpg") center/cover no-repeat, #276eb5;
     -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
     filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
   }
 
   .advantages {
-    background: url("../img/advantages/advantages-desk.jpg") center/cover no-repeat;
+    background: url("../img/advantages/advantages-desk.jpg") center/cover no-repeat, #dae8f5;
   }
 
   .booking {
     padding: 50px 0;
-    background: url("../img/booking/booking-desk.jpg") center/cover no-repeat;
+    background: url("../img/booking/booking-desk.jpg") center/cover no-repeat, #d7eefc;
+  }
+
+  .map {
+    background: url("../img/map/map-desk.jpg") center/contain no-repeat;
   }
 }
 
 @media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 1024px) and (min-resolution: 2dppx) {
   .header {
-    background: url("../img/intro/intro-desk@2x.jpg") center/cover no-repeat;
+    background: url("../img/intro/intro-desk@2x.jpg") center/cover no-repeat, #276eb5;
   }
 
   .advantages {
-    background: url("../img/advantages/advantages-desk@2x.jpg") center/cover no-repeat;
+    background: url("../img/advantages/advantages-desk@2x.jpg") center/cover no-repeat, #dae8f5;
   }
 
   .booking {
-    background: url("../img/booking/booking-desk@2x.jpg") center/cover no-repeat;
+    background: url("../img/booking/booking-desk@2x.jpg") center/cover no-repeat, #d7eefc;
+  }
+
+  .map {
+    background: url("../img/map/map-desk@2x.jpg") center/contain no-repeat;
   }
 }
 
@@ -1984,18 +2000,13 @@ input[type=checkbox]:checked + label::before {
     line-height: 15px;
   }
 
-  .map {
+  .map__canvas {
     width: 324px;
     height: 335px;
   }
 }
 
 @media (max-width: 767px) {
-  .error-message {
-    font-size: 12px;
-    line-height: 18px;
-  }
-
   .container {
     padding: 0 15px;
   }
@@ -2055,6 +2066,14 @@ input[type=checkbox]:checked + label::before {
     width: 100%;
     background-color: rgba(0, 43, 102, 0.5);
     overflow-x: hidden;
+  }
+
+  .is-nojs .header__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .nav__list {
@@ -2137,6 +2156,22 @@ input[type=checkbox]:checked + label::before {
     overflow-x: hidden;
   }
 
+  .is-nojs .nav__list {
+    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .is-nojs .nav__toggle {
+    display: none;
+  }
+
   .intro h2 {
     font-size: 36px;
     line-height: 45px;
@@ -2146,8 +2181,12 @@ input[type=checkbox]:checked + label::before {
     font-size: 16px;
   }
 
+  .is-nojs .intro {
+    padding: 40px 0 185px;
+  }
+
   .description {
-    padding: 65px 0 291px;
+    padding: 65px 0 85px;
   }
 
   .description h2 {
@@ -2155,23 +2194,20 @@ input[type=checkbox]:checked + label::before {
     line-height: 34px;
   }
 
-  .description__content {
-    max-width: 100%;
+  .description .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
 
-  .description__content::before {
-    bottom: -206px;
-    left: 50%;
-    -webkit-transform: translateX(-145px);
-    -ms-transform: translateX(-145px);
-    transform: translateX(-145px);
-    width: 290px;
-    height: 155px;
-    background: url("../img/description/penguins-mob.jpg") no-repeat top right/contain;
+  .description__content {
+    max-width: 100%;
+    margin-bottom: 50px;
   }
 
   .advantages {
-    background: url("../img/advantages/advantages-mob.jpg") center/cover no-repeat;
+    background: url("../img/advantages/advantages-mob.jpg") center/cover no-repeat, #dae8f5;
   }
 
   .advantages h2 {
@@ -2192,6 +2228,7 @@ input[type=checkbox]:checked + label::before {
   }
 
   .catalog__list {
+    padding: 0 10px 0;
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
@@ -2203,7 +2240,7 @@ input[type=checkbox]:checked + label::before {
 
   .booking {
     padding: 65px 0;
-    background: url("../img/booking/booking-mob.jpg") center/cover no-repeat;
+    background: url("../img/booking/booking-mob.jpg") center/cover no-repeat, #d7eefc;
   }
 
   .booking .container {
@@ -2252,6 +2289,12 @@ input[type=checkbox]:checked + label::before {
     gap: 43px;
   }
 
+  .contacts__address {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+  }
+
   .footer .container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2278,6 +2321,10 @@ input[type=checkbox]:checked + label::before {
   }
 
   .map {
+    background: url("../img/map/map-mob.jpg") center/contain no-repeat;
+  }
+
+  .map__canvas {
     width: 100%;
     height: 316px;
   }
@@ -2312,28 +2359,28 @@ input[type=checkbox]:checked + label::before {
 }
 
 @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 767px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 767px) and (min-resolution: 2dppx) {
-  .description__content::before {
-    background: url("../img/description/penguins-mob@2x.jpg") no-repeat top right/contain;
-  }
-
   .advantages {
-    background: url("../img/advantages/advantages-mob@2x.jpg") center/cover no-repeat;
+    background: url("../img/advantages/advantages-mob@2x.jpg") center/cover no-repeat, #dae8f5;
   }
 
   .booking {
-    background: url("../img/booking/booking-mob@2x.jpg") center/cover no-repeat;
+    background: url("../img/booking/booking-mob@2x.jpg") center/cover no-repeat, #d7eefc;
+  }
+
+  .map {
+    background: url("../img/map/map-mob@2x.jpg") center/contain no-repeat;
   }
 }
 
 @media (max-width: 499px) {
   .header {
-    background: url("../img/intro/intro-mob.jpg") center/cover no-repeat;
+    background: url("../img/intro/intro-mob.jpg") center/cover no-repeat, #276eb5;
   }
 }
 
 @media (max-width: 499px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 499px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 499px) and (min-resolution: 2dppx) {
   .header {
-    background: url("../img/intro/intro-mob@2x.jpg") center/cover no-repeat;
+    background: url("../img/intro/intro-mob@2x.jpg") center/cover no-repeat, #276eb5;
   }
 }
 

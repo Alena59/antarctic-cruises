@@ -22,7 +22,7 @@
 
 .catalog__list {
   list-style-type: none;
-  padding: 0;
+  padding: 0 15px 0;
   margin: 0;
   color: $color-alice-blue;
   display: grid;
@@ -34,6 +34,7 @@
   }
 
   @include vp-767 {
+    padding: 0 10px 0;
     grid-template-columns: 1fr;
   }
 }

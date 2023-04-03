@@ -1,0 +1,40 @@
+.address {
+  & h3 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    margin: 0 0 45px 0;
+  }
+}
+
+.address__list {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+  font-style: normal;
+
+  & p,
+    a {
+    margin: 0;
+    padding-left: 25px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 18px;
+    }
+  }
+}
+
+.address__list p::before {
+  content: url("../img/svg/pin-icon.svg");
+  height: 22px;
+}
+
+.contacts__address a::before {
+  content: url("../img/svg/phone.svg");
+  height: 18px;
+  top: 2px;
+}
