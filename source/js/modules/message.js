@@ -1,4 +1,5 @@
 const wrapper = document.querySelector('.wrapper');
+const body = document.getElementById('body');
 
 const successSubmitMessage = document.querySelector('#success')
   .content
@@ -12,12 +13,14 @@ const errorSubmitMessage = document.querySelector('#error')
 
 const onCloseMessageClick = () => {
   successSubmitMessage.remove();
+  body.style.overflow = 'scroll';
   successSubmitMessage.removeEventListener('click', onCloseMessageClick);
   document.removeEventListener('keydown', onMessageEscKeydown);
 };
 
 const showMessage = () => {
   wrapper.append(successSubmitMessage);
+  body.style.overflow = 'hidden';
   successSubmitMessage.addEventListener('click', onCloseMessageClick);
   document.addEventListener('keydown', onMessageEscKeydown);
 };
@@ -31,6 +34,7 @@ function onMessageEscKeydown (evt) {
 
 const onErrorMessageClick = () => {
   errorSubmitMessage.remove();
+  body.style.overflow = 'scroll';
   document.removeEventListener('keydown', onErrorMessageEscKeydown);
   errorSubmitMessage.removeEventListener('click', onErrorMessageClick);
 };
@@ -43,7 +47,8 @@ function onErrorMessageEscKeydown (evt) {
 }
 
 const showErrorMessage = () => {
-  document.body.append(errorSubmitMessage);
+  wrapper.body.append(errorSubmitMessage);
+  body.style.overflow = 'hidden';
   errorSubmitMessage.addEventListener('click', onErrorMessageClick);
   document.addEventListener('keydown', onErrorMessageEscKeydown);
 };

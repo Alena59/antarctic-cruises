@@ -8,11 +8,13 @@
     font-weight: 700;
     font-size: 54px;
     line-height: 66px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
     @include vp-1023 {
       margin: 0 0 29px 0;
       font-size: 50px;
       line-height: 61px;
+      text-shadow: none;
     }
 
     @include vp-767 {
@@ -25,10 +27,12 @@
     margin: 0;
     color: $color-alice-blue;
     font-size: 20px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
     @include vp-1023 {
       font-size: 18px;
       line-height: 22px;
+      text-shadow: none;
     }
 
     @include vp-767 {
@@ -40,5 +44,15 @@
 .is-nojs .intro {
   @include vp-767 {
     padding: 40px 0 185px;
+  }
+}
+
+.intro__wrapper {
+  padding-left: 95px;
+  max-width: 975px;
+
+  @include vp-1023 {
+    padding: 0;
+    max-width: 100%;
   }
 }

@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  /* stylelint-disable-next-line */
   min-height: calc(100 * var(--vh, 1vh));
 
   .header,
@@ -54,7 +53,6 @@
 }
 
 .no-transition {
-  /* stylelint-disable-next-line */
   transition: none !important;
 }
 
@@ -62,11 +60,11 @@
   outline: none;
 }
 
-.error  input {
+.error-validation  input {
   box-shadow: inset 0 0 8px #8a0000;
 }
 
-.error input[type="checkbox"] + label::before {
+.error-validation input[type="checkbox"] + label::before {
   box-shadow: inset 0 0 5px #8a0000;
 }
 
@@ -77,4 +75,64 @@
   line-height: 18px;
   bottom: -20px;
   left: 0;
+}
+
+.success,
+.error {
+  position: fixed;
+  z-index: 110;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  background-color: rgba(37, 50, 92, 0.782);
+}
+
+.success__wrapper,
+.error__wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  margin: auto;
+  padding-top: 110px;
+  background: $color-alice-blue;
+
+  @include vp-767 {
+    padding-top: 90px;
+    width: 230px;
+    height: 230px;
+  }
+}
+
+.success__wrapper {
+  width: 400px;
+  height: 400px;
+  padding-top: 230px;
+  background: url("../img/mark.png") center 35%/80px 80px no-repeat, $color-alice-blue;
+
+  @include vp-767 {
+    padding-top: 160px;
+    width: 250px;
+    height: 250px;
+    background-size: 60px 60px;
+    background-position: center 40%;
+  }
+}
+
+.success__message,
+.error__message {
+  color: #0450a7;
+  margin: 0;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 700;
+  text-align: center;
+
+  @include vp-767 {
+    font-size: 18px;
+    line-height: 24px;
+  }
 }

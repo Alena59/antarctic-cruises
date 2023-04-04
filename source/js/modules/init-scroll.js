@@ -1,11 +1,11 @@
-const nav = document.querySelectorAll('.nav');
+const allNav = document.querySelectorAll('.nav');
 const catalog = document.getElementById('catalog');
 const advantages = document.getElementById('advantages');
 const contacts = document.getElementById('contacts');
 
 function initScroll() {
-  for (const allNav of nav) {
-    allNav.addEventListener('click', function (e) {
+  for (const nav of allNav) {
+    nav.addEventListener('click', function (e) {
       e.preventDefault();
 
       if(e.target.getAttribute('href') === '#catalog') {

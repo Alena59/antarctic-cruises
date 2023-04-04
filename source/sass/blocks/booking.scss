@@ -93,6 +93,11 @@
   height: 43px;
   font-size: 14px;
   line-height: 21px;
+  transition: opacity $trans-default;
+
+  &:hover:not(:focus,:disabled) {
+    opacity: 0.8;
+  }
 
   &::placeholder {
     color: rgba($color-tangaroa, 0.7);
@@ -148,7 +153,7 @@ label[for="booking-agreement"] {
   font-size: 10px;
   line-height: 13px;
   color: $color-alice-blue;
-  padding-left: 22px;
+  padding: 5px 0 5px 22px;
   cursor: pointer;
   display: inline-flex;
 
@@ -164,7 +169,7 @@ label[for="booking-agreement"] {
     height: 18px;
     background-color: $color-alice-blue;
     left: 0;
-    top: -2px;
+    top: 3px;
 
     @include vp-767 {
       width: 20px;
@@ -173,11 +178,14 @@ label[for="booking-agreement"] {
     }
   }
 
-  @include hover {
-    &:not(:disabled) {
-      opacity: 0.8;
-    }
+  &:hover:not(:focus,:disabled) {
+    opacity: 0.8;
   }
+}
+
+.booking input[type="checkbox"]:focus:not(:disabled) + label {
+  outline: 1px solid $color-default-white;
+  border-radius: 2px;
 }
 
 input[type="checkbox"]:checked + label::before {
@@ -187,6 +195,13 @@ input[type="checkbox"]:checked + label::before {
 .booking__checkbox {
   margin-bottom: 35px;
   position: relative;
+}
+
+.booking input[type="checkbox"] {
+  position: absolute;
+  bottom: -5px;
+  left: 8px;
+  width: 1px;
 }
 
 .booking__checkbox .error-message {
