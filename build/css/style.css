@@ -869,7 +869,6 @@ button,
   font-weight: 600;
   font-size: 28px;
   line-height: 42px;
-  max-width: 550px;
   margin: 0 0 50px 0;
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
@@ -954,7 +953,6 @@ button,
   font-size: 28px;
   line-height: 42px;
   margin: 0 auto 49px;
-  max-width: 600px;
   text-align: center;
 }
 
@@ -2016,7 +2014,6 @@ input[type=checkbox]:checked + label::before {
   }
 
   .advantages h2 {
-    max-width: 100%;
     font-size: 24px;
     line-height: 36px;
     margin: 0 0 30px 0;
@@ -2037,7 +2034,6 @@ input[type=checkbox]:checked + label::before {
   }
 
   .catalog h2 {
-    max-width: 100%;
     font-size: 24px;
     line-height: 36px;
     margin: 0 0 30px 0;

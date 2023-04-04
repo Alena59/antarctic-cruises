@@ -30,7 +30,6 @@
     font-weight: 600;
     font-size: 28px;
     line-height: 42px;
-    max-width: 550px;
     margin: 0 0 50px 0;
     align-self: center;
     text-align: center;
@@ -41,7 +40,6 @@
     }
 
     @include vp-767 {
-      max-width: 100%;
       font-size: 24px;
       line-height: 36px;
       margin: 0 0 30px 0;
