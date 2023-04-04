@@ -1,9 +1,16 @@
 .intro {
-  padding-top: 210px;
-  padding-bottom: 283px;
+  padding: 190px 0 278px;
+
+  @include vp-1023 {
+    padding: 210px 0 273px;
+  }
+
+  @include vp-767 {
+    padding: 124px 0 180px;
+  }
 
   & h2 {
-    margin: 0 0 30px 0;
+    margin: 0 0 12px 0;
     color: $color-alice-blue;
     font-weight: 700;
     font-size: 54px;
@@ -11,13 +18,14 @@
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
     @include vp-1023 {
-      margin: 0 0 29px 0;
+      margin: 0 0 15px 0;
       font-size: 50px;
       line-height: 61px;
       text-shadow: none;
     }
 
     @include vp-767 {
+      margin: 0 0 10px 0;
       font-size: 36px;
       line-height: 45px;
     }
@@ -36,6 +44,7 @@
     }
 
     @include vp-767 {
+      max-width: 230px;
       font-size: 16px;
     }
   }

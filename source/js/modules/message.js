@@ -1,56 +1,56 @@
 const wrapper = document.querySelector('.wrapper');
 const body = document.getElementById('body');
-
-const successSubmitMessage = document.querySelector('#success')
-  .content
-  .querySelector('.success')
-  .cloneNode(true);
-
-const errorSubmitMessage = document.querySelector('#error')
-  .content
-  .querySelector('.error')
-  .cloneNode(true);
-
-const onCloseMessageClick = () => {
-  successSubmitMessage.remove();
-  body.style.overflow = 'scroll';
-  successSubmitMessage.removeEventListener('click', onCloseMessageClick);
-  document.removeEventListener('keydown', onMessageEscKeydown);
-};
+const templateError = document.querySelector('#error');
+const templateSuccess = document.querySelector('#success');
 
 const showMessage = () => {
-  wrapper.append(successSubmitMessage);
-  body.style.overflow = 'hidden';
-  successSubmitMessage.addEventListener('click', onCloseMessageClick);
-  document.addEventListener('keydown', onMessageEscKeydown);
-};
+  if (templateSuccess) {
+    const successSubmitMessage = templateSuccess.content.querySelector('.success').cloneNode(true);
 
-function onMessageEscKeydown (evt) {
-  if (evt.key === 'Escape') {
-    evt.preventDefault();
-    onCloseMessageClick();
-  }
-}
+    const onCloseMessageClick = () => {
+      successSubmitMessage.remove();
+      body.style.overflow = 'scroll';
+      successSubmitMessage.removeEventListener('click', onCloseMessageClick);
+      document.removeEventListener('keydown', onMessageEscKeydown);
+    };
 
-const onErrorMessageClick = () => {
-  errorSubmitMessage.remove();
-  body.style.overflow = 'scroll';
-  document.removeEventListener('keydown', onErrorMessageEscKeydown);
-  errorSubmitMessage.removeEventListener('click', onErrorMessageClick);
-};
+    wrapper.append(successSubmitMessage);
+    body.style.overflow = 'hidden';
+    successSubmitMessage.addEventListener('click', onCloseMessageClick);
+    document.addEventListener('keydown', onMessageEscKeydown);
 
-function onErrorMessageEscKeydown (evt) {
-  if (evt.key === 'Escape') {
-    evt.preventDefault();
-    onErrorMessageClick();
+    function onMessageEscKeydown (evt) {
+      if (evt.key === 'Escape') {
+        evt.preventDefault();
+        onCloseMessageClick();
+      }
+    }
   }
 }
 
 const showErrorMessage = () => {
-  wrapper.body.append(errorSubmitMessage);
-  body.style.overflow = 'hidden';
-  errorSubmitMessage.addEventListener('click', onErrorMessageClick);
-  document.addEventListener('keydown', onErrorMessageEscKeydown);
-};
+  if (templateError) {
+    const errorSubmitMessage = templateError.content.querySelector('.error').cloneNode(true);
+
+    const onErrorMessageClick = () => {
+      errorSubmitMessage.remove();
+      body.style.overflow = 'scroll';
+      document.removeEventListener('keydown', onErrorMessageEscKeydown);
+      errorSubmitMessage.removeEventListener('click', onErrorMessageClick);
+    };
+
+    wrapper.append(errorSubmitMessage);
+    body.style.overflow = 'hidden';
+    errorSubmitMessage.addEventListener('click', onErrorMessageClick);
+    document.addEventListener('keydown', onErrorMessageEscKeydown);
+
+    function onErrorMessageEscKeydown (evt) {
+      if (evt.key === 'Escape') {
+        evt.preventDefault();
+        onErrorMessageClick();
+      }
+    }
+   }
+}
 
 export {showErrorMessage, showMessage};

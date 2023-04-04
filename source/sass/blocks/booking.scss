@@ -9,7 +9,7 @@
   }
 
   @include vp-768 {
-    padding: 100px 0;
+    padding: 90px 0 100px;
     background: url("../img/booking/booking-tab.jpg") center/cover no-repeat, $color-pattens-blue;
 
     @include retina {
@@ -18,7 +18,7 @@
   }
 
   @include vp-767 {
-    padding: 65px 0;
+    padding: 58px 0 65px;
     background: url("../img/booking/booking-mob.jpg") center/cover no-repeat, $color-pattens-blue;
 
     @include retina {
@@ -29,22 +29,23 @@
 
 .booking .container {
   display: flex;
-  // flex-wrap: wrap;
+  column-gap: 4%;
 
   @include vp-1023 {
     flex-direction: column;
     align-items: center;
-    row-gap: 60px;
+    row-gap: 50px;
+    column-gap: 0;
   }
 
   @include vp-767 {
-    row-gap: 40px;
+    row-gap: 36px;
   }
 }
 
 .booking__inner {
-  padding-left: 45px;
-  align-self: center;
+  padding-left: 59px;
+  padding-top: 163px;
   margin-right: auto;
   display: inline-flex;
   flex-direction: column;
@@ -60,15 +61,16 @@
     font-weight: 700;
     font-size: 40px;
     line-height: 60px;
-    margin: 0 0 30px 0;
+    margin: 0 0 10px 0;
 
     @include vp-1023 {
       font-size: 34px;
       line-height: 51px;
-      margin: 0 0 25px 0;
+      margin: 0 0 5px 0;
     }
 
     @include vp-767 {
+      margin: 0 0 13px 0;
       font-size: 24px;
       line-height: 31px;
     }
@@ -80,9 +82,15 @@
     line-height: 27px;
     margin: 0;
 
+    @include vp-1023 {
+      padding-left: 13px;
+    }
+
     @include vp-767 {
-      font-size: 18px;
+      padding: 0;
+      font-size: 16px;
       line-height: 22px;
+      max-width: 100%;
     }
   }
 }
@@ -104,6 +112,14 @@
   }
 }
 
+.booking br {
+  display: none;
+
+  @include vp-767 {
+    display: block;
+  }
+}
+
 .booking__box {
   display: grid;
   position: relative;
@@ -111,7 +127,7 @@
 
 .booking form {
   margin-right: 60px;
-  padding: 50px;
+  padding: 44px 50px 50px;
   display: flex;
   max-width: 403px;
   background: $color-tangaroa;
@@ -124,7 +140,7 @@
 
   @include vp-767 {
     max-width: 350px;
-    padding: 30px;
+    padding: 30px 30px 40px;
   }
 }
 
@@ -134,11 +150,15 @@
   gap: 20px;
   border: none;
   padding: 0;
-  margin: 0 0 25px 0;
+  margin: 0 0 15px 0;
+
+  @include vp-767 {
+    margin: 0 0 10px 0;
+  }
 }
 
 .booking legend {
-  margin: 0 0 35px 0;
+  margin: 0 0 27px 0;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
@@ -174,7 +194,7 @@ label[for="booking-agreement"] {
     @include vp-767 {
       width: 20px;
       height: 20px;
-      top: 0;
+      top: 5px;
     }
   }
 
@@ -193,8 +213,12 @@ input[type="checkbox"]:checked + label::before {
 }
 
 .booking__checkbox {
-  margin-bottom: 35px;
+  margin-bottom: 28px;
   position: relative;
+
+  @include vp-767 {
+    margin-bottom: 23px;
+  }
 }
 
 .booking input[type="checkbox"] {
@@ -219,4 +243,5 @@ input[type="checkbox"]:checked + label::before {
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
+  padding: 10px 10px 11px;
 }

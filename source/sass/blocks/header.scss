@@ -2,6 +2,14 @@
   overflow: hidden;
   padding-top: 35px;
 
+  @include vp-1023 {
+    padding-top: 30px;
+  }
+
+  @include vp-767 {
+    padding-top: 14px;
+  }
+
   @include vp-1024 {
     background: url("../img/intro/intro-desk.jpg") center/cover no-repeat, $color-lochmara;
     filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
@@ -32,15 +40,20 @@
   display: flex;
   justify-content: space-between;
   gap: 50px;
-  align-items: center;
 }
-
 
 .header__link-logo {
   transition: opacity $trans-default;
 
   @include hover-focus {
     opacity: 0.8;
+  }
+}
+
+.header__nav-list a {
+  @include vp-767 {
+    font-size: 18px;
+    line-height: 22px;
   }
 }
 
@@ -74,7 +87,7 @@
     z-index: 7;
     position: relative;
     right: -12%;
-    transform: translateY(20px);
+    transform: translateY(17px);
 
     &::after {
       position: absolute;

@@ -4,19 +4,43 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   padding: 0;
-  gap: 20px;
+  gap: 24px;
+
+  @include vp-1023 {
+    gap: 21px;
+  }
+
+  @include vp-767 {
+    gap: 18px;
+  }
+}
+
+.social__icon {
+  @include vp-1023 {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 .social a {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 20px;
-  min-height: 20px;
+  min-width: 22px;
+  min-height: 25px;
   cursor: pointer;
   transition: opacity $trans-default;
 
   @include hover-focus {
     opacity: 0.8;
+  }
+
+  @include vp-1023 {
+    min-width: 17px;
+    padding-bottom: 3px;
+  }
+
+  @include vp-1023 {
+    min-width: 16px;
   }
 }

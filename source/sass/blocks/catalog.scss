@@ -1,10 +1,20 @@
 .catalog {
-  padding: 95px 0 120px 0;
+  padding: 85px 0 120px;
+
+  @include vp-1023 {
+    padding: 88px 0 100px;
+  }
+
+  @include vp-767 {
+    padding: 55px 0 66px;
+  }
 
   & h2 {
+    font-weight: 600;
     font-size: 28px;
     line-height: 42px;
-    margin: 0 0 60px 0;
+    margin: 0 auto 49px;
+    max-width: 600px;
     text-align: center;
 
     @include vp-1023 {
@@ -13,9 +23,10 @@
     }
 
     @include vp-767 {
+      max-width: 100%;
       font-size: 24px;
       line-height: 36px;
-      margin: 0 0 40px 0;
+      margin: 0 0 30px 0;
     }
   }
 }
@@ -26,7 +37,7 @@
   margin: 0;
   color: $color-alice-blue;
   display: grid;
-  grid-template-columns: repeat(4, minmax(100px, 260px));
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
   gap: 30px;
 
   @include vp-1023 {
@@ -41,27 +52,28 @@
 
 .catalog__item {
   position: relative;
-  // height: 28.25vw;
   height: 31.25vw;
+  // height: 28.25vw;
   max-height: 386px;
   background-color: $color-tangaroa;
   padding: 11% 10% 8.7%;
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  overflow: hidden;
 
   @include vp-1023 {
     width: 40.2vw;
     height: 50.26vw;
     max-height: 50.26vw;
-    padding: 29px 30px 27px;
+    padding: 29px 35px 27px;
   }
 
   @include vp-767 {
     width: 100%;
     height: 120.63vw;
     max-height: 120.63vw;
-    padding: 29px 20px 17px;
+    padding: 30px 24px 17px;
   }
 
   & h3 {
@@ -71,7 +83,6 @@
     line-height: 27px;
     // order: -1;
     // margin-bottom: 20px;
-    position: absolute;
     z-index: 40;
     bottom: 30px;
   }
@@ -83,25 +94,37 @@
     line-height: 20px;
   }
 
-  & span:not(:last-child) {
-    margin-bottom: 9px;
+  & span {
     display: block;
     font-size: 14px;
     line-height: 20px;
     color: $color-quartz;
+
+    &:not(:last-child) {
+      margin-bottom: 9px;
+    }
   }
 }
 
 .catalog__link {
   background-color: $color-alice-blue;
-  padding: 13px;
+  padding: 10px 10px 9px;
   display: block;
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
   text-align: center;
   margin-top: auto;
+  margin-bottom: 12px;
   transition: opacity $trans-default;
+
+  @include vp-1023 {
+    margin-bottom: 8px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 20px;
+  }
 }
 
 .catalog__item img {
@@ -111,9 +134,9 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  // display: none;
   display: block;
   z-index: 30;
+  object-position: 56%;
 }
 
 .catalog__item {
@@ -124,24 +147,31 @@
     }
 
     & h3 {
-      position: static;
-      margin: 0 0 20px 0;
+      margin: 0 0 12px 0;
       order: -1;
     }
   }
 }
+
+// .catalog__item--active h3 {
+//   margin: 0 0 12px 0;
+//   order: -1;
+// }
+
+// .catalog__item--active img{
+//   display: none;
+// }
 
 .catalog__item a:focus-visible + picture {
   display: none;
 }
 
 .catalog__item a:focus-visible ~ h3 {
-  position: static;
-  margin: 0 0 25px 0;
+  margin: 0 0 12px 0;
   order: -1;
 }
 
 .catalog__content {
+  margin-bottom: 24px;
   overflow: auto;
-  margin-bottom: 30px;
 }

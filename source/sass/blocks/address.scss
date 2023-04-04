@@ -3,14 +3,18 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 27px;
-    margin: 0 0 45px 0;
+    margin: 0 0 31px 0;
+
+    @include vp-1023 {
+      margin: 0 0 27px 0;
+    }
   }
 }
 
 .address__list {
   display: flex;
   flex-direction: column;
-  gap: 33px;
+  gap: 22px;
   font-style: normal;
 
   & p,
@@ -18,6 +22,10 @@
     margin: 0;
     padding-left: 25px;
     position: relative;
+
+    @include vp-767 {
+      padding-left: 27px;
+    }
 
     &::before {
       position: absolute;
@@ -31,6 +39,10 @@
 .address__list p::before {
   content: url("../img/svg/pin-icon.svg");
   height: 22px;
+
+  @include vp-1023 {
+    top: 5px;
+  }
 }
 
 .address__list a::before {

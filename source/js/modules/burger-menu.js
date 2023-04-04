@@ -4,7 +4,10 @@ const body = document.getElementById('body');
 const link = document.querySelectorAll('.header__nav a');
 const logo = document.querySelector('.header__link-logo');
 
-header.classList.remove('is-nojs');
+if (header) {
+  header.classList.remove('is-nojs');
+}
+
 let lastFocus;
 lastFocus = document.activeElement;
 
@@ -37,31 +40,33 @@ const deactiveMenu = () => {
 }
 
 function initMenu() {
-  link.forEach(element => {
-    element.addEventListener('click', function () {
-      if (header.classList.contains('is-open')) {
-        deactiveMenu();
+  if (link && logo && navToggle && header && body) {
+    link.forEach(element => {
+      element.addEventListener('click', function () {
+        if (header.classList.contains('is-open')) {
+          deactiveMenu();
+        }
+      })
+    });
+
+    navToggle.addEventListener('click', function () {
+      if (header.classList.contains('is-close')) {
+        header.classList.remove('is-close');
+        header.classList.add('is-open');
+        body.style.overflow = 'hidden';
+        logo.focus();
+
+        header.addEventListener('keydown', focus);
+
+      } else {
+        header.classList.add('is-close');
+        header.classList.remove('is-open');
+        body.style.overflow = 'scroll';
+        header.removeEventListener('keydown', focus);
+        lastFocus.focus();
       }
-    })
-  });
-
-  navToggle.addEventListener('click', function () {
-    if (header.classList.contains('is-close')) {
-      header.classList.remove('is-close');
-      header.classList.add('is-open');
-      body.style.overflow = 'hidden';
-      logo.focus();
-
-      header.addEventListener('keydown', focus);
-
-    } else {
-      header.classList.add('is-close');
-      header.classList.remove('is-open');
-      body.style.overflow = 'scroll';
-      header.removeEventListener('keydown', focus);
-      lastFocus.focus();
-    }
-    })
+    });
   }
+}
 
 export {initMenu};

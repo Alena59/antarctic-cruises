@@ -13,14 +13,14 @@ function validateForm(form) {
 
   function createError(input, text) {
     const parent = input.parentNode;
-    const errorLabel = document.createElement('span')
+    const errorSpan = document.createElement('span')
 
-    errorLabel.classList.add('error-message')
-    errorLabel.textContent = text
+    errorSpan.classList.add('error-message')
+    errorSpan.textContent = text
 
     parent.classList.add('error-validation')
 
-    parent.append(errorLabel)
+    parent.append(errorSpan)
   }
 
   const allInputs = form.querySelectorAll('input');

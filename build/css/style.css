@@ -700,10 +700,15 @@ button,
   display: -ms-inline-flexbox;
   display: inline-flex;
   padding: 10px 20px;
+  text-align: center;
   color: #011C40;
   background-color: #2c39f2;
   border: none;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   -webkit-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
@@ -735,9 +740,6 @@ button,
   -ms-flex-pack: justify;
   justify-content: space-between;
   gap: 50px;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .header__link-logo {
@@ -758,7 +760,7 @@ button,
 
 .nav__list {
   list-style-type: none;
-  padding: 0;
+  padding: 9px 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -788,13 +790,17 @@ button,
   display: none;
 }
 
+.is-open .nav__toggle {
+  top: 19px;
+  left: 7px;
+}
+
 .intro {
-  padding-top: 210px;
-  padding-bottom: 283px;
+  padding: 190px 0 278px;
 }
 
 .intro h2 {
-  margin: 0 0 30px 0;
+  margin: 0 0 12px 0;
   color: #f9fbfd;
   font-weight: 700;
   font-size: 54px;
@@ -826,7 +832,7 @@ button,
   font-weight: 600;
   font-size: 28px;
   line-height: 42px;
-  margin: 0 0 40px 0;
+  margin: 0 0 24px 0;
 }
 
 .description img {
@@ -856,11 +862,7 @@ button,
   -ms-flex-direction: column;
   flex-direction: column;
   max-width: 512px;
-  padding: 66px 0 0;
-}
-
-.advantages {
-  padding: 120px 0;
+  padding: 56px 0 0;
 }
 
 .advantages h2 {
@@ -868,10 +870,11 @@ button,
   font-size: 28px;
   line-height: 42px;
   max-width: 550px;
-  margin: 0 0 60px 0;
+  margin: 0 0 50px 0;
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
   align-self: center;
+  text-align: center;
 }
 
 .advantages .container {
@@ -894,13 +897,13 @@ button,
   grid-template-columns: 1fr 1fr 1fr;
   -ms-grid-rows: 1fr;
   grid-template-rows: 1fr;
-  grid-column-gap: 2.8%;
-  grid-row-gap: 27px;
+  grid-column-gap: 40px;
+  grid-row-gap: 25px;
 }
 
 .advantages__item {
   position: relative;
-  padding: 87px 30px 50px;
+  padding: 80px 30px 45px;
   background-color: #f9fbfd;
 }
 
@@ -908,7 +911,7 @@ button,
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
-  margin: 0 0 20px 0;
+  margin: 0 0 8px 0;
 }
 
 .advantages__item p {
@@ -943,13 +946,15 @@ button,
 }
 
 .catalog {
-  padding: 95px 0 120px 0;
+  padding: 85px 0 120px;
 }
 
 .catalog h2 {
+  font-weight: 600;
   font-size: 28px;
   line-height: 42px;
-  margin: 0 0 60px 0;
+  margin: 0 auto 49px;
+  max-width: 600px;
   text-align: center;
 }
 
@@ -960,8 +965,8 @@ button,
   color: #f9fbfd;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(100px, 260px))[4];
-  grid-template-columns: repeat(4, minmax(100px, 260px));
+  -ms-grid-columns: (minmax(100px, 1fr))[4];
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
   gap: 30px;
 }
 
@@ -979,6 +984,7 @@ button,
   -ms-flex-direction: column;
   flex-direction: column;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .catalog__item h3 {
@@ -986,7 +992,6 @@ button,
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
-  position: absolute;
   z-index: 40;
   bottom: 30px;
 }
@@ -998,23 +1003,27 @@ button,
   line-height: 20px;
 }
 
-.catalog__item span:not(:last-child) {
-  margin-bottom: 9px;
+.catalog__item span {
   display: block;
   font-size: 14px;
   line-height: 20px;
   color: #d8d8d9;
 }
 
+.catalog__item span:not(:last-child) {
+  margin-bottom: 9px;
+}
+
 .catalog__link {
   background-color: #f9fbfd;
-  padding: 13px;
+  padding: 10px 10px 9px;
   display: block;
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
   text-align: center;
   margin-top: auto;
+  margin-bottom: 12px;
   -webkit-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
@@ -1030,6 +1039,8 @@ button,
   object-fit: cover;
   display: block;
   z-index: 30;
+  -o-object-position: 56%;
+  object-position: 56%;
 }
 
 .catalog__item.focus-visible:focus img {
@@ -1038,8 +1049,7 @@ button,
 }
 
 .catalog__item.focus-visible:focus h3 {
-  position: static;
-  margin: 0 0 20px 0;
+  margin: 0 0 12px 0;
   -webkit-box-ordinal-group: 0;
   -ms-flex-order: -1;
   order: -1;
@@ -1050,29 +1060,29 @@ button,
 }
 
 .catalog__item a:focus-visible ~ h3 {
-  position: static;
-  margin: 0 0 25px 0;
+  margin: 0 0 12px 0;
   -webkit-box-ordinal-group: 0;
   -ms-flex-order: -1;
   order: -1;
 }
 
 .catalog__content {
+  margin-bottom: 24px;
   overflow: auto;
-  margin-bottom: 30px;
 }
 
 .booking .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-column-gap: 4%;
+  -moz-column-gap: 4%;
+  column-gap: 4%;
 }
 
 .booking__inner {
-  padding-left: 45px;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+  padding-left: 59px;
+  padding-top: 163px;
   margin-right: auto;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -1088,7 +1098,7 @@ button,
   font-weight: 700;
   font-size: 40px;
   line-height: 60px;
-  margin: 0 0 30px 0;
+  margin: 0 0 10px 0;
 }
 
 .booking__inner p {
@@ -1133,6 +1143,10 @@ button,
   color: rgba(1, 28, 64, 0.7);
 }
 
+.booking br {
+  display: none;
+}
+
 .booking__box {
   display: -ms-grid;
   display: grid;
@@ -1141,7 +1155,7 @@ button,
 
 .booking form {
   margin-right: 60px;
-  padding: 50px;
+  padding: 44px 50px 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1165,11 +1179,11 @@ button,
   gap: 20px;
   border: none;
   padding: 0;
-  margin: 0 0 25px 0;
+  margin: 0 0 15px 0;
 }
 
 .booking legend {
-  margin: 0 0 35px 0;
+  margin: 0 0 27px 0;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
@@ -1211,7 +1225,7 @@ input[type=checkbox]:checked + label::before {
 }
 
 .booking__checkbox {
-  margin-bottom: 35px;
+  margin-bottom: 28px;
   position: relative;
 }
 
@@ -1235,10 +1249,11 @@ input[type=checkbox]:checked + label::before {
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
+  padding: 10px 10px 11px;
 }
 
 .contacts {
-  padding: 120px 0;
+  padding: 120px 0 115px;
 }
 
 .contacts .container {
@@ -1248,8 +1263,12 @@ input[type=checkbox]:checked + label::before {
   gap: 100px;
 }
 
+.contacts__address {
+  padding-top: 78px;
+}
+
 .footer {
-  padding: 50px 0;
+  padding: 50px 0 42px;
   background-color: #011C40;
   margin-top: auto;
 }
@@ -1295,7 +1314,7 @@ input[type=checkbox]:checked + label::before {
 
 .footer__social-list {
   margin: 0;
-  max-width: 140px;
+  max-width: 160px;
 }
 
 .footer__nav-list {
@@ -1303,6 +1322,7 @@ input[type=checkbox]:checked + label::before {
   -ms-flex-pack: start;
   justify-content: flex-start;
   max-width: 609px;
+  padding: 0 0 10px;
 }
 
 .social {
@@ -1316,7 +1336,7 @@ input[type=checkbox]:checked + label::before {
   -ms-flex-pack: end;
   justify-content: flex-end;
   padding: 0;
-  gap: 20px;
+  gap: 24px;
 }
 
 .social a {
@@ -1329,8 +1349,8 @@ input[type=checkbox]:checked + label::before {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  min-width: 20px;
-  min-height: 20px;
+  min-width: 22px;
+  min-height: 25px;
   cursor: pointer;
   -webkit-transition: opacity 0.3s ease;
   -o-transition: opacity 0.3s ease;
@@ -1351,7 +1371,7 @@ input[type=checkbox]:checked + label::before {
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
-  margin: 0 0 45px 0;
+  margin: 0 0 31px 0;
 }
 
 .address__list {
@@ -1362,7 +1382,7 @@ input[type=checkbox]:checked + label::before {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 33px;
+  gap: 22px;
   font-style: normal;
 }
 
@@ -1457,11 +1477,12 @@ input[type=checkbox]:checked + label::before {
 
 @media (min-width: 768px) {
   .advantages {
+    padding: 90px 0 100px;
     background: url("../img/advantages/advantages-tab.jpg") center/cover no-repeat, #dae8f5;
   }
 
   .booking {
-    padding: 100px 0;
+    padding: 90px 0 100px;
     background: url("../img/booking/booking-tab.jpg") center/cover no-repeat, #d7eefc;
   }
 
@@ -1492,6 +1513,7 @@ input[type=checkbox]:checked + label::before {
   }
 
   .advantages {
+    padding: 110px 0 120px;
     background: url("../img/advantages/advantages-desk.jpg") center/cover no-repeat, #dae8f5;
   }
 
@@ -1528,9 +1550,18 @@ input[type=checkbox]:checked + label::before {
     padding: 0 45px;
   }
 
+  .header {
+    padding-top: 30px;
+  }
+
   .header__logo-icon {
     width: 38px;
     height: 20px;
+  }
+
+  .nav__list {
+    padding: 0;
+    gap: 23px;
   }
 
   .nav a {
@@ -1538,8 +1569,12 @@ input[type=checkbox]:checked + label::before {
     line-height: 17px;
   }
 
+  .intro {
+    padding: 210px 0 273px;
+  }
+
   .intro h2 {
-    margin: 0 0 29px 0;
+    margin: 0 0 15px 0;
     font-size: 50px;
     line-height: 61px;
     text-shadow: none;
@@ -1557,12 +1592,18 @@ input[type=checkbox]:checked + label::before {
   }
 
   .description {
-    padding: 100px 0;
+    padding: 90px 0 94px;
   }
 
   .description h2 {
     font-size: 26px;
     line-height: 36px;
+    margin: 0 0 16px 0;
+    max-width: 300px;
+  }
+
+  .description img {
+    padding-top: 10px;
   }
 
   .description__content {
@@ -1575,8 +1616,12 @@ input[type=checkbox]:checked + label::before {
     line-height: 39px;
   }
 
+  .advantages__list {
+    grid-column-gap: 30px;
+  }
+
   .advantages__item {
-    padding: 76px 16px 25px 20px;
+    padding: 70px 16px 22px 20px;
   }
 
   .advantages__item h3 {
@@ -1587,6 +1632,8 @@ input[type=checkbox]:checked + label::before {
   .advantages__item--all-inclusive::before,
   .advantages__item--tours::before {
     height: 26px;
+    top: 25px;
+    left: 20px;
   }
 
   .advantages__item--liner::before {
@@ -1599,6 +1646,10 @@ input[type=checkbox]:checked + label::before {
 
   .advantages__item--tours::before {
     width: 36px;
+  }
+
+  .catalog {
+    padding: 88px 0 100px;
   }
 
   .catalog h2 {
@@ -1615,7 +1666,11 @@ input[type=checkbox]:checked + label::before {
     width: 40.2vw;
     height: 50.26vw;
     max-height: 50.26vw;
-    padding: 29px 30px 27px;
+    padding: 29px 35px 27px;
+  }
+
+  .catalog__link {
+    margin-bottom: 8px;
   }
 
   .booking .container {
@@ -1626,7 +1681,10 @@ input[type=checkbox]:checked + label::before {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    row-gap: 60px;
+    row-gap: 50px;
+    -webkit-column-gap: 0;
+    -moz-column-gap: 0;
+    column-gap: 0;
   }
 
   .booking__inner {
@@ -1638,11 +1696,35 @@ input[type=checkbox]:checked + label::before {
   .booking__inner h3 {
     font-size: 34px;
     line-height: 51px;
-    margin: 0 0 25px 0;
+    margin: 0 0 5px 0;
+  }
+
+  .booking__inner p {
+    padding-left: 13px;
   }
 
   .booking form {
     margin-right: 0;
+  }
+
+  .contacts {
+    padding: 100px 0 95px;
+  }
+
+  .contacts .container {
+    gap: 30px;
+  }
+
+  .contacts__address {
+    padding-top: 68px;
+  }
+
+  .footer {
+    padding-top: 48px;
+  }
+
+  .footer__link-logo {
+    padding-top: 3px;
   }
 
   .footer__inner {
@@ -1655,11 +1737,12 @@ input[type=checkbox]:checked + label::before {
   }
 
   .footer__social-list {
-    max-width: 105px;
+    max-width: 110px;
   }
 
   .footer__nav-list {
     max-width: 473px;
+    padding: 0 0 5px;
   }
 
   .footer__nav-list a {
@@ -1667,9 +1750,35 @@ input[type=checkbox]:checked + label::before {
     line-height: 15px;
   }
 
+  .social {
+    gap: 21px;
+  }
+
+  .social__icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .social a {
+    min-width: 17px;
+    padding-bottom: 3px;
+  }
+
+  .social a {
+    min-width: 16px;
+  }
+
   .map__canvas {
     width: 324px;
     height: 335px;
+  }
+
+  .address h3 {
+    margin: 0 0 27px 0;
+  }
+
+  .address__list p::before {
+    top: 5px;
   }
 }
 
@@ -1699,6 +1808,15 @@ input[type=checkbox]:checked + label::before {
     padding: 0 15px;
   }
 
+  .header {
+    padding-top: 14px;
+  }
+
+  .header__nav-list a {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
   .header__logo-icon {
     width: 42px;
     height: 32px;
@@ -1715,9 +1833,9 @@ input[type=checkbox]:checked + label::before {
     z-index: 7;
     position: relative;
     right: -12%;
-    -webkit-transform: translateY(20px);
-    -ms-transform: translateY(20px);
-    transform: translateY(20px);
+    -webkit-transform: translateY(17px);
+    -ms-transform: translateY(17px);
+    transform: translateY(17px);
   }
 
   .is-open .header__link-logo::after {
@@ -1761,11 +1879,6 @@ input[type=checkbox]:checked + label::before {
     justify-content: flex-start;
   }
 
-  .nav a {
-    font-size: 18px;
-    line-height: 22px;
-  }
-
   .is-open a {
     color: #011C40;
   }
@@ -1773,7 +1886,8 @@ input[type=checkbox]:checked + label::before {
   .nav__toggle {
     display: block;
     position: relative;
-    top: 12px;
+    top: 4px;
+    left: 3px;
     width: 30px;
     height: 30px;
     z-index: 6;
@@ -1790,17 +1904,17 @@ input[type=checkbox]:checked + label::before {
     width: 24px;
     height: 2px;
     background-color: #f9fbfd;
-    -webkit-box-shadow: 0 5px 0 0 #f9fbfd, 0 10px 0 0 #f9fbfd;
-    box-shadow: 0 5px 0 0 #f9fbfd, 0 10px 0 0 #f9fbfd;
+    -webkit-box-shadow: 0 6px 0 0 #f9fbfd, 0 12px 0 0 #f9fbfd;
+    box-shadow: 0 6px 0 0 #f9fbfd, 0 12px 0 0 #f9fbfd;
   }
 
   .is-open .nav__toggle::before,
   .is-open .nav__toggle::after {
     content: "";
     position: absolute;
-    top: 12px;
+    top: 13px;
     left: 8px;
-    width: 13px;
+    width: 15px;
     height: 2px;
     background-color: #011C40;
   }
@@ -1825,9 +1939,10 @@ input[type=checkbox]:checked + label::before {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 75px 35px 30px 15px;
+    padding: 85px 35px 30px 25px;
     height: 100%;
     width: 89%;
+    gap: 26px;
     text-align: start;
     background-color: #f9fbfd;
     overflow-y: scroll;
@@ -1850,12 +1965,18 @@ input[type=checkbox]:checked + label::before {
     display: none;
   }
 
+  .intro {
+    padding: 124px 0 180px;
+  }
+
   .intro h2 {
+    margin: 0 0 10px 0;
     font-size: 36px;
     line-height: 45px;
   }
 
   .intro p {
+    max-width: 230px;
     font-size: 16px;
   }
 
@@ -1864,12 +1985,17 @@ input[type=checkbox]:checked + label::before {
   }
 
   .description {
-    padding: 65px 0 85px;
+    padding: 56px 0 85px;
   }
 
   .description h2 {
+    max-width: 100%;
     font-size: 24px;
     line-height: 34px;
+  }
+
+  .description img {
+    padding-top: 0;
   }
 
   .description .container {
@@ -1877,32 +2003,44 @@ input[type=checkbox]:checked + label::before {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    gap: 43px;
   }
 
   .description__content {
     max-width: 100%;
-    margin-bottom: 50px;
   }
 
   .advantages {
+    padding: 57px 0 65px;
     background: url("../img/advantages/advantages-mob.jpg") center/cover no-repeat, #dae8f5;
   }
 
   .advantages h2 {
+    max-width: 100%;
     font-size: 24px;
     line-height: 36px;
+    margin: 0 0 30px 0;
   }
 
   .advantages__list {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-    grid-row-gap: 30px;
+    gap: 30px;
+  }
+
+  .advantages__item h3 {
+    max-width: 210px;
+  }
+
+  .catalog {
+    padding: 55px 0 66px;
   }
 
   .catalog h2 {
+    max-width: 100%;
     font-size: 24px;
     line-height: 36px;
-    margin: 0 0 40px 0;
+    margin: 0 0 30px 0;
   }
 
   .catalog__list {
@@ -1915,31 +2053,46 @@ input[type=checkbox]:checked + label::before {
     width: 100%;
     height: 120.63vw;
     max-height: 120.63vw;
-    padding: 29px 20px 17px;
+    padding: 30px 24px 17px;
+  }
+
+  .catalog__link {
+    margin-bottom: 20px;
   }
 
   .booking {
-    padding: 65px 0;
+    padding: 58px 0 65px;
     background: url("../img/booking/booking-mob.jpg") center/cover no-repeat, #d7eefc;
   }
 
   .booking .container {
-    row-gap: 40px;
+    row-gap: 36px;
   }
 
   .booking__inner h3 {
+    margin: 0 0 13px 0;
     font-size: 24px;
     line-height: 31px;
   }
 
   .booking__inner p {
-    font-size: 18px;
+    padding: 0;
+    font-size: 16px;
     line-height: 22px;
+    max-width: 100%;
+  }
+
+  .booking br {
+    display: block;
   }
 
   .booking form {
     max-width: 350px;
-    padding: 30px;
+    padding: 30px 30px 40px;
+  }
+
+  .booking fieldset {
+    margin: 0 0 10px 0;
   }
 
   .booking legend {
@@ -1954,11 +2107,19 @@ input[type=checkbox]:checked + label::before {
   label[for=booking-agreement]::before {
     width: 20px;
     height: 20px;
-    top: 0;
+    top: 5px;
+  }
+
+  .booking__checkbox {
+    margin-bottom: 23px;
   }
 
   .booking__checkbox .error-message {
     bottom: -27px;
+  }
+
+  .contacts {
+    padding: 60px 0 58px;
   }
 
   .contacts .container {
@@ -1966,13 +2127,18 @@ input[type=checkbox]:checked + label::before {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 43px;
+    gap: 33px;
   }
 
   .contacts__address {
+    padding-top: 0;
     -webkit-box-ordinal-group: 0;
     -ms-flex-order: -1;
     order: -1;
+  }
+
+  .footer {
+    padding: 30px 0 34px;
   }
 
   .footer .container {
@@ -1985,6 +2151,10 @@ input[type=checkbox]:checked + label::before {
     flex-direction: column;
   }
 
+  .footer .container {
+    gap: 16px;
+  }
+
   .footer__inner {
     -webkit-box-align: start;
     -ms-flex-align: start;
@@ -1993,7 +2163,7 @@ input[type=checkbox]:checked + label::before {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
   }
 
   .footer__logo-icon {
@@ -2007,8 +2177,11 @@ input[type=checkbox]:checked + label::before {
 
   .footer__nav-list {
     max-width: 100%;
-    gap: 23px;
-    margin-bottom: 30px;
+    gap: 8px;
+  }
+
+  .social {
+    gap: 18px;
   }
 
   .map {
@@ -2018,6 +2191,11 @@ input[type=checkbox]:checked + label::before {
   .map__canvas {
     width: 100%;
     height: 316px;
+  }
+
+  .address__list p,
+  .address__list a {
+    padding-left: 27px;
   }
 }
 
@@ -2066,8 +2244,7 @@ input[type=checkbox]:checked + label::before {
   }
 
   .catalog__item:hover:not(.focus-visible) h3 {
-    position: static;
-    margin: 0 0 20px 0;
+    margin: 0 0 12px 0;
     -webkit-box-ordinal-group: 0;
     -ms-flex-order: -1;
     order: -1;
