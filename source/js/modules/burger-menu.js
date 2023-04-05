@@ -1,5 +1,5 @@
 let header = document.querySelector('.header');
-let navToggle = document.querySelector('.nav__toggle');
+let navToggle = document.querySelector('.header__toggle');
 const body = document.getElementById('body');
 const link = document.querySelectorAll('.header__nav a');
 const logo = document.querySelector('.header__link-logo');

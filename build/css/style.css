@@ -721,8 +721,23 @@ button,
 }
 
 .header {
+  position: relative;
   overflow: hidden;
   padding-top: 35px;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.header img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -10;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  background-color: #276eb5;
 }
 
 .header .container {
@@ -751,6 +766,10 @@ button,
   fill: #f9fbfd;
 }
 
+.header__toggle {
+  display: none;
+}
+
 .nav__list {
   list-style-type: none;
   padding: 9px 0 0;
@@ -777,15 +796,6 @@ button,
 
 .nav a.focus-visible:focus {
   opacity: 0.8;
-}
-
-.nav__toggle {
-  display: none;
-}
-
-.is-open .nav__toggle {
-  top: 19px;
-  left: 7px;
 }
 
 .intro {
@@ -856,6 +866,23 @@ button,
   flex-direction: column;
   max-width: 512px;
   padding: 56px 0 0;
+}
+
+.advantages {
+  padding: 110px 0 120px;
+  position: relative;
+}
+
+.advantages img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -10;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  background-color: #dae8f5;
 }
 
 .advantages h2 {
@@ -1047,6 +1074,23 @@ button,
 .catalog__content {
   margin-bottom: 24px;
   overflow: auto;
+}
+
+.booking {
+  padding: 50px 0;
+  position: relative;
+}
+
+.booking img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -10;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  background-color: #d7eefc;
 }
 
 .booking .container {
@@ -1339,6 +1383,21 @@ input[type=checkbox]:checked + label::before {
   opacity: 0.8;
 }
 
+.map {
+  position: relative;
+}
+
+.map img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -10;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
 .map__canvas {
   width: 560px;
   height: 306px;
@@ -1441,94 +1500,14 @@ input[type=checkbox]:checked + label::before {
   }
 */
 
-@media (min-width: 500px) {
-  .header {
-    background: url("../img/intro/intro-tab.jpg") center/cover no-repeat, #276eb5;
-  }
-}
-
-@media (min-width: 500px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 500px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 500px) and (min-resolution: 2dppx) {
-  .header {
-    background: url("../img/intro/intro-tab@2x.jpg") center/cover no-repeat, #276eb5;
-  }
-}
-
-@media (min-width: 768px) {
-  .advantages {
-    padding: 90px 0 100px;
-    background: url("../img/advantages/advantages-tab.jpg") center/cover no-repeat, #dae8f5;
-  }
-
-  .booking {
-    padding: 90px 0 100px;
-    background: url("../img/booking/booking-tab.jpg") center/cover no-repeat, #d7eefc;
-  }
-
-  .map {
-    background: url("../img/map/map-tab.jpg") center/contain no-repeat;
-  }
-}
-
-@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 768px) and (min-resolution: 2dppx) {
-  .advantages {
-    background: url("../img/advantages/advantages-tab@2x.jpg") center/cover no-repeat, #dae8f5;
-  }
-
-  .booking {
-    background: url("../img/booking/booking-tab@2x.jpg") center/cover no-repeat, #d7eefc;
-  }
-
-  .map {
-    background: url("../img/map/map-tab@2x.jpg") center/contain no-repeat;
-  }
-}
-
-@media (min-width: 1024px) {
-  .header {
-    background: url("../img/intro/intro-desk.jpg") center/cover no-repeat, #276eb5;
-    -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
-    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
-  }
-
-  .advantages {
-    padding: 110px 0 120px;
-    background: url("../img/advantages/advantages-desk.jpg") center/cover no-repeat, #dae8f5;
-  }
-
-  .booking {
-    padding: 50px 0;
-    background: url("../img/booking/booking-desk.jpg") center/cover no-repeat, #d7eefc;
-  }
-
-  .map {
-    background: url("../img/map/map-desk.jpg") center/contain no-repeat;
-  }
-}
-
-@media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 1024px) and (min-resolution: 2dppx) {
-  .header {
-    background: url("../img/intro/intro-desk@2x.jpg") center/cover no-repeat, #276eb5;
-  }
-
-  .advantages {
-    background: url("../img/advantages/advantages-desk@2x.jpg") center/cover no-repeat, #dae8f5;
-  }
-
-  .booking {
-    background: url("../img/booking/booking-desk@2x.jpg") center/cover no-repeat, #d7eefc;
-  }
-
-  .map {
-    background: url("../img/map/map-desk@2x.jpg") center/contain no-repeat;
-  }
-}
-
 @media (max-width: 1023px) {
   .container {
     padding: 0 45px;
   }
 
   .header {
+    -webkit-filter: none;
+    filter: none;
     padding-top: 30px;
   }
 
@@ -1587,6 +1566,10 @@ input[type=checkbox]:checked + label::before {
   .description__content {
     padding: 0;
     max-width: 324px;
+  }
+
+  .advantages {
+    padding: 90px 0 100px;
   }
 
   .advantages h2 {
@@ -1649,6 +1632,10 @@ input[type=checkbox]:checked + label::before {
 
   .catalog__link {
     margin-bottom: 8px;
+  }
+
+  .booking {
+    padding: 90px 0 100px;
   }
 
   .booking .container {
@@ -1787,6 +1774,7 @@ input[type=checkbox]:checked + label::before {
   }
 
   .header {
+    min-height: 500px;
     padding-top: 14px;
   }
 
@@ -1847,21 +1835,7 @@ input[type=checkbox]:checked + label::before {
     gap: 20px;
   }
 
-  .nav__list {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-  }
-
-  .is-open a {
-    color: #011c40;
-  }
-
-  .nav__toggle {
+  .header__toggle {
     display: block;
     position: relative;
     top: 4px;
@@ -1874,7 +1848,7 @@ input[type=checkbox]:checked + label::before {
     background-color: transparent;
   }
 
-  .is-close .nav__toggle::before {
+  .is-close .header__toggle::before {
     content: "";
     position: absolute;
     top: 6px;
@@ -1886,8 +1860,13 @@ input[type=checkbox]:checked + label::before {
     box-shadow: 0 6px 0 0 #f9fbfd, 0 12px 0 0 #f9fbfd;
   }
 
-  .is-open .nav__toggle::before,
-  .is-open .nav__toggle::after {
+  .is-open .header__toggle {
+    top: 19px;
+    left: 7px;
+  }
+
+  .is-open .header__toggle::before,
+  .is-open .header__toggle::after {
     content: "";
     position: absolute;
     top: 13px;
@@ -1897,20 +1876,40 @@ input[type=checkbox]:checked + label::before {
     background-color: #011c40;
   }
 
-  .is-open .nav__toggle::before {
+  .is-open .header__toggle::before {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
 
-  .is-open .nav__toggle::after {
+  .is-open .header__toggle::after {
     -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
   }
 
-  .is-close .nav__list {
+  .is-close .header__nav {
     display: none;
+  }
+
+  .is-nojs .header__toggle {
+    display: none;
+  }
+
+  .nav__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .is-open a {
+    color: #011c40;
   }
 
   .is-open .nav__list {
@@ -1923,7 +1922,7 @@ input[type=checkbox]:checked + label::before {
     gap: 26px;
     text-align: start;
     background-color: #f9fbfd;
-    overflow-y: scroll;
+    overflow: scroll;
     overflow-x: hidden;
   }
 
@@ -1936,10 +1935,6 @@ input[type=checkbox]:checked + label::before {
     -ms-flex-direction: column;
     flex-direction: column;
     gap: 15px;
-  }
-
-  .is-nojs .nav__toggle {
-    display: none;
   }
 
   .intro {
@@ -1989,7 +1984,6 @@ input[type=checkbox]:checked + label::before {
 
   .advantages {
     padding: 57px 0 65px;
-    background: url("../img/advantages/advantages-mob.jpg") center/cover no-repeat, #dae8f5;
   }
 
   .advantages h2 {
@@ -2005,7 +1999,7 @@ input[type=checkbox]:checked + label::before {
   }
 
   .advantages__item {
-    min-height: 290px;
+    min-height: 250px;
   }
 
   .advantages__item h3 {
@@ -2032,7 +2026,7 @@ input[type=checkbox]:checked + label::before {
     width: 100%;
     height: 120.63vw;
     max-height: 120.63vw;
-    padding: 30px 24px 17px;
+    padding: 30px 25px 17px;
   }
 
   .catalog__link {
@@ -2041,7 +2035,6 @@ input[type=checkbox]:checked + label::before {
 
   .booking {
     padding: 58px 0 65px;
-    background: url("../img/booking/booking-mob.jpg") center/cover no-repeat, #d7eefc;
   }
 
   .booking .container {
@@ -2117,7 +2110,7 @@ input[type=checkbox]:checked + label::before {
   }
 
   .footer {
-    padding: 30px 0 34px;
+    padding: 33px 0;
   }
 
   .footer .container {
@@ -2163,8 +2156,9 @@ input[type=checkbox]:checked + label::before {
     gap: 18px;
   }
 
-  .map {
-    background: url("../img/map/map-mob.jpg") center/contain no-repeat;
+  .map img {
+    -o-object-fit: contain;
+    object-fit: contain;
   }
 
   .map__canvas {
@@ -2175,32 +2169,6 @@ input[type=checkbox]:checked + label::before {
   .address__list p,
   .address__list a {
     padding-left: 27px;
-  }
-}
-
-@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 767px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 767px) and (min-resolution: 2dppx) {
-  .advantages {
-    background: url("../img/advantages/advantages-mob@2x.jpg") center/cover no-repeat, #dae8f5;
-  }
-
-  .booking {
-    background: url("../img/booking/booking-mob@2x.jpg") center/cover no-repeat, #d7eefc;
-  }
-
-  .map {
-    background: url("../img/map/map-mob@2x.jpg") center/contain no-repeat;
-  }
-}
-
-@media (max-width: 499px) {
-  .header {
-    background: url("../img/intro/intro-mob.jpg") center/cover no-repeat, #276eb5;
-  }
-}
-
-@media (max-width: 499px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 499px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 499px) and (min-resolution: 2dppx) {
-  .header {
-    background: url("../img/intro/intro-mob@2x.jpg") center/cover no-repeat, #276eb5;
   }
 }
 

@@ -30,7 +30,7 @@ function validateForm(form) {
     removeError(input);
 
     if (input.dataset.validateType === 'phone') {
-      if (phoneTest(input)) {
+      if (validatePhone(input)) {
         removeError(input);
         createError(input, 'Некорректный номер!');
         result = false;
@@ -38,7 +38,7 @@ function validateForm(form) {
     }
 
     if (input.dataset.validateType === 'email') {
-      if (emailTest(input)) {
+      if (validateEmail(input)) {
         removeError(input);
         createError(input, 'Некорректный адрес!');
         result = false;
@@ -60,11 +60,11 @@ function validateForm(form) {
     }
   }
 
-  function phoneTest(input) {
+  function validatePhone(input) {
     return !/^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/.test(input.value);
   }
 
-  function emailTest(input) {
+  function validateEmail(input) {
     return !/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(input.value);
   }
 

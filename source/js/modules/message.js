@@ -14,17 +14,17 @@ const showMessage = () => {
       document.removeEventListener('keydown', onMessageEscKeydown);
     };
 
-    wrapper.append(successSubmitMessage);
-    body.style.overflow = 'hidden';
-    successSubmitMessage.addEventListener('click', onCloseMessageClick);
-    document.addEventListener('keydown', onMessageEscKeydown);
-
     const onMessageEscKeydown = (evt) => {
       if (evt.key === 'Escape') {
         evt.preventDefault();
         onCloseMessageClick();
       }
     };
+
+    wrapper.append(successSubmitMessage);
+    body.style.overflow = 'hidden';
+    successSubmitMessage.addEventListener('click', onCloseMessageClick);
+    document.addEventListener('keydown', onMessageEscKeydown);
   }
 };
 
@@ -39,17 +39,17 @@ const showErrorMessage = () => {
       errorSubmitMessage.removeEventListener('click', onErrorMessageClick);
     };
 
-    wrapper.append(errorSubmitMessage);
-    body.style.overflow = 'hidden';
-    errorSubmitMessage.addEventListener('click', onErrorMessageClick);
-    document.addEventListener('keydown', onErrorMessageEscKeydown);
-
     const onErrorMessageEscKeydown = (evt) => {
       if (evt.key === 'Escape') {
         evt.preventDefault();
         onErrorMessageClick();
       }
     };
+
+    wrapper.append(errorSubmitMessage);
+    body.style.overflow = 'hidden';
+    errorSubmitMessage.addEventListener('click', onErrorMessageClick);
+    document.addEventListener('keydown', onErrorMessageEscKeydown);
   }
 };
 
