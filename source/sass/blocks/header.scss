@@ -179,6 +179,10 @@
 
 .is-nojs {
   @include vp-767 {
+    & .header__nav {
+      display: block;
+    }
+
     & .header__toggle {
       display: none;
     }

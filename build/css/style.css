@@ -1897,6 +1897,10 @@ input[type=checkbox]:checked + label::before {
     display: none;
   }
 
+  .is-nojs .header__nav {
+    display: block;
+  }
+
   .is-nojs .header__toggle {
     display: none;
   }
