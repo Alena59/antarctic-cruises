@@ -19,14 +19,14 @@ const showMessage = () => {
     successSubmitMessage.addEventListener('click', onCloseMessageClick);
     document.addEventListener('keydown', onMessageEscKeydown);
 
-    function onMessageEscKeydown (evt) {
+    const onMessageEscKeydown = (evt) => {
       if (evt.key === 'Escape') {
         evt.preventDefault();
         onCloseMessageClick();
       }
-    }
+    };
   }
-}
+};
 
 const showErrorMessage = () => {
   if (templateError) {
@@ -44,13 +44,13 @@ const showErrorMessage = () => {
     errorSubmitMessage.addEventListener('click', onErrorMessageClick);
     document.addEventListener('keydown', onErrorMessageEscKeydown);
 
-    function onErrorMessageEscKeydown (evt) {
+    const onErrorMessageEscKeydown = (evt) => {
       if (evt.key === 'Escape') {
         evt.preventDefault();
         onErrorMessageClick();
       }
-    }
-   }
-}
+    };
+  }
+};
 
 export {showErrorMessage, showMessage};

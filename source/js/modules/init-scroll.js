@@ -9,15 +9,15 @@ function initScroll() {
       nav.addEventListener('click', function (e) {
         e.preventDefault();
 
-        if(e.target.getAttribute('href') === '#catalog') {
+        if (e.target.getAttribute('href') === '#catalog') {
           catalog.scrollIntoView({behavior: 'smooth'});
         }
 
-        if(e.target.getAttribute('href') === '#advantages') {
+        if (e.target.getAttribute('href') === '#advantages') {
           advantages.scrollIntoView({behavior: 'smooth'});
         }
 
-        if(e.target.getAttribute('href') === '#contacts') {
+        if (e.target.getAttribute('href') === '#contacts') {
           contacts.scrollIntoView({behavior: 'smooth'});
         }
       });

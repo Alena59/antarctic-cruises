@@ -3,7 +3,7 @@
 
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  // min-height: 100vh;
   min-height: calc(100 * var(--vh, 1vh));
 
   .header,
@@ -51,16 +51,15 @@
     display: none;
   }
 }
-
-.no-transition {
-  transition: none !important;
-}
+// .no-transition {
+//   transition: none !important;
+// }
 
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
 }
 
-.error-validation  input {
+.error-validation input {
   box-shadow: inset 0 0 8px #8a0000;
 }
 
@@ -87,7 +86,7 @@
   top: 0;
   left: 0;
   overflow-y: auto;
-  background-color: rgba(37, 50, 92, 0.782);
+  background-color: rgba(37, 50, 92, 0.78);
 }
 
 .success__wrapper,

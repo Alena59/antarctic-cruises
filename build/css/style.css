@@ -436,7 +436,7 @@ html {
   font-size: 16px;
   line-height: 24px;
   font-family: "Montserrat", "Arial", sans-serif;
-  color: #011C40;
+  color: #011c40;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -569,7 +569,6 @@ button,
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 100vh;
   min-height: calc(100 * var(--vh, 1vh));
 }
 
@@ -617,12 +616,6 @@ button,
   display: none;
 }
 
-.no-transition {
-  -webkit-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
-}
-
 .js-focus-visible :focus:not(.focus-visible) {
   outline: none;
 }
@@ -658,7 +651,7 @@ button,
   top: 0;
   left: 0;
   overflow-y: auto;
-  background-color: rgba(37, 50, 92, 0.782);
+  background-color: rgba(37, 50, 92, 0.78);
 }
 
 .success__wrapper,
@@ -701,7 +694,7 @@ button,
   display: inline-flex;
   padding: 10px 20px;
   text-align: center;
-  color: #011C40;
+  color: #011c40;
   background-color: #2c39f2;
   border: none;
   cursor: pointer;
@@ -971,7 +964,7 @@ button,
   position: relative;
   height: 31.25vw;
   max-height: 386px;
-  background-color: #011C40;
+  background-color: #011c40;
   padding: 11% 10% 8.7%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -982,6 +975,18 @@ button,
   flex-direction: column;
   cursor: pointer;
   overflow: hidden;
+}
+
+.catalog__item.focus-visible:focus img {
+  display: none;
+  z-index: -1;
+}
+
+.catalog__item.focus-visible:focus h3 {
+  margin: 0 0 12px 0;
+  -webkit-box-ordinal-group: 0;
+  -ms-flex-order: -1;
+  order: -1;
 }
 
 .catalog__item h3 {
@@ -1038,18 +1043,6 @@ button,
   z-index: 30;
   -o-object-position: 56%;
   object-position: 56%;
-}
-
-.catalog__item.focus-visible:focus img {
-  display: none;
-  z-index: -1;
-}
-
-.catalog__item.focus-visible:focus h3 {
-  margin: 0 0 12px 0;
-  -webkit-box-ordinal-group: 0;
-  -ms-flex-order: -1;
-  order: -1;
 }
 
 .catalog__item a:focus-visible + picture {
@@ -1157,7 +1150,7 @@ button,
   display: -ms-flexbox;
   display: flex;
   max-width: 403px;
-  background: #011C40;
+  background: #011c40;
   color: #f9fbfd;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -1239,7 +1232,7 @@ input[type=checkbox]:checked + label::before {
 
 .booking__btn {
   background-color: #f9fbfd;
-  color: #011C40;
+  color: #011c40;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -1266,7 +1259,7 @@ input[type=checkbox]:checked + label::before {
 
 .footer {
   padding: 50px 0 42px;
-  background-color: #011C40;
+  background-color: #011c40;
   margin-top: auto;
 }
 
@@ -1820,7 +1813,7 @@ input[type=checkbox]:checked + label::before {
   }
 
   .is-open .header__logo-icon {
-    fill: #011C40;
+    fill: #011c40;
   }
 
   .is-open .header__link-logo {
@@ -1877,7 +1870,7 @@ input[type=checkbox]:checked + label::before {
   }
 
   .is-open a {
-    color: #011C40;
+    color: #011c40;
   }
 
   .nav__toggle {
@@ -1913,7 +1906,7 @@ input[type=checkbox]:checked + label::before {
     left: 8px;
     width: 15px;
     height: 2px;
-    background-color: #011C40;
+    background-color: #011c40;
   }
 
   .is-open .nav__toggle::before {
@@ -1947,7 +1940,6 @@ input[type=checkbox]:checked + label::before {
   }
 
   .is-nojs .nav__list {
-    display: block;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

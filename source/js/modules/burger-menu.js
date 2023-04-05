@@ -37,16 +37,16 @@ const deactiveMenu = () => {
   body.style.overflow = 'scroll';
   header.classList.add('is-close');
   header.classList.remove('is-open');
-}
+};
 
 function initMenu() {
   if (link && logo && navToggle && header && body) {
-    link.forEach(element => {
+    link.forEach((element) => {
       element.addEventListener('click', function () {
         if (header.classList.contains('is-open')) {
           deactiveMenu();
         }
-      })
+      });
     });
 
     navToggle.addEventListener('click', function () {

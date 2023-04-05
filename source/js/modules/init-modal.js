@@ -1,28 +1,28 @@
-  import {showMessage, showErrorMessage} from './message';
-  import {validateForm} from './form-validation';
+import {showMessage, showErrorMessage} from './message';
+import {validateForm} from './form-validation';
 
-  const form = document.getElementById('form');
+const form = document.getElementById('form');
 
-  if (form) {
-    const allInputs = form.querySelectorAll('input');
+if (form) {
+  const allInputs = form.querySelectorAll('input');
 
-    for (const input of allInputs) {
-      input.removeAttribute("required");
-      input.removeAttribute("pattern");
-      input.removeAttribute("title");
-    }
+  for (const input of allInputs) {
+    input.removeAttribute('required');
+    input.removeAttribute('pattern');
+    input.removeAttribute('title');
   }
+}
 
-  function sendForm () {
-    if (form) {
-      form.addEventListener('submit', function(event) {
-        event.preventDefault();
+function sendForm() {
+  if (form) {
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
 
-        if (validateForm(this) == true) {
-          fetch('https://echo.htmlacademy.ru/', {
-            method: 'POST',
-            body: new FormData(event.target)
-          })
+      if (validateForm(form) === true) {
+        fetch('https://echo.htmlacademy.ru/', {
+          method: 'POST',
+          body: new FormData(event.target),
+        })
             .then((response) => {
               if (response.ok) {
                 showMessage();
@@ -30,11 +30,10 @@
               } else {
                 showErrorMessage();
               }
-            })
-        }
-      })
-    }
+            });
+      }
+    });
   }
+}
 
-
-  export {sendForm}
+export {sendForm};

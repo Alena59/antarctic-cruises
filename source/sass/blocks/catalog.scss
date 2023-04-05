@@ -59,6 +59,18 @@
   cursor: pointer;
   overflow: hidden;
 
+  @include hover-focus {
+    & img {
+      display: none;
+      z-index: -1;
+    }
+
+    & h3 {
+      margin: 0 0 12px 0;
+      order: -1;
+    }
+  }
+
   @include vp-1023 {
     width: 40.2vw;
     height: 50.26vw;
@@ -132,20 +144,6 @@
   display: block;
   z-index: 30;
   object-position: 56%;
-}
-
-.catalog__item {
-  @include hover-focus {
-    & img {
-      display: none;
-      z-index: -1;
-    }
-
-    & h3 {
-      margin: 0 0 12px 0;
-      order: -1;
-    }
-  }
 }
 
 .catalog__item a:focus-visible + picture {
