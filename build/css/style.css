@@ -1264,7 +1264,7 @@ label[for=booking-agreement]:hover:not(:focus, :disabled) {
   border-radius: 2px;
 }
 
-input[type=checkbox]:checked + label::before {
+.booking input[type=checkbox]:checked + label::before {
   background: url("../img/svg/arrow.svg") no-repeat center, #f9fbfd;
 }
 

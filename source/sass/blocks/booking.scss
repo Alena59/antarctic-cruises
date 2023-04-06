@@ -203,7 +203,7 @@ label[for="booking-agreement"] {
   border-radius: 2px;
 }
 
-input[type="checkbox"]:checked + label::before {
+.booking input[type="checkbox"]:checked + label::before {
   background: url("../img/svg/arrow.svg") no-repeat center, $color-alice-blue;
 }
 
