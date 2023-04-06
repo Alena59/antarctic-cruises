@@ -620,10 +620,6 @@ button,
   outline: none;
 }
 
-::-webkit-scrollbar {
-  width: 0;
-}
-
 .error-validation input {
   -webkit-box-shadow: inset 0 0 8px #8a0000;
   box-shadow: inset 0 0 8px #8a0000;
@@ -1094,7 +1090,12 @@ button,
 
 .catalog__content {
   margin-bottom: 24px;
-  overflow: auto;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.catalog__content::-webkit-scrollbar {
+  width: 0;
 }
 
 .booking {

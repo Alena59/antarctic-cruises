@@ -157,5 +157,10 @@
 
 .catalog__content {
   margin-bottom: 24px;
-  overflow: auto;
+  overflow-y: scroll;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
