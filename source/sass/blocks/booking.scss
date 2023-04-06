@@ -227,7 +227,7 @@ input[type="checkbox"]:checked + label::before {
   bottom: -22px;
 
   @include vp-767 {
-    bottom: -27px;
+    bottom: -19px;
   }
 }
 

@@ -2093,7 +2093,7 @@ input[type=checkbox]:checked + label::before {
   }
 
   .booking__checkbox .error-message {
-    bottom: -27px;
+    bottom: -19px;
   }
 
   .contacts {
