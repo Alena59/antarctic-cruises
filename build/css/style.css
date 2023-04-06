@@ -771,12 +771,12 @@ button,
   display: none;
 }
 
-.header__checkbox:focus:not(:disabled) + label {
+.header__checkbox:focus-visible:not(:disabled) + label {
   outline: 2px solid #f9fbfd;
   border-radius: 2px;
 }
 
-.header__checkbox:checked:focus:not(:disabled) + label {
+.header__checkbox:checked:focus-visible:not(:disabled) + label {
   outline: 2px solid rgba(1, 28, 64, 0.8);
 }
 

@@ -2,14 +2,6 @@ let header = document.querySelector('.header');
 let headerToggle = document.querySelector('.header__checkbox');
 const body = document.getElementById('body');
 const link = document.querySelectorAll('.header__nav a');
-const logo = document.querySelector('.header__link-logo');
-
-if (header) {
-  header.classList.remove('is-nojs');
-}
-
-let lastFocus;
-lastFocus = document.activeElement;
 
 function focus(e) {
   if (e.keyCode === 9) {
@@ -41,7 +33,7 @@ const deactiveMenu = () => {
 };
 
 function initMenu() {
-  if (link && logo && headerToggle && header && body) {
+  if (link && headerToggle && header && body) {
     link.forEach((element) => {
       element.addEventListener('click', function () {
         if (header.classList.contains('is-open')) {
@@ -54,7 +46,6 @@ function initMenu() {
       if (headerToggle.getAttribute('type') === 'checkbox' && headerToggle.checked === true) {
         header.classList.add('is-open');
         body.style.overflow = 'hidden';
-        logo.focus();
 
         header.addEventListener('keydown', focus);
 
@@ -62,7 +53,6 @@ function initMenu() {
         header.classList.remove('is-open');
         body.style.overflow = 'scroll';
         header.removeEventListener('keydown', focus);
-        lastFocus.focus();
       }
     });
   }

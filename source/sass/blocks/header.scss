@@ -172,12 +172,12 @@
   }
 }
 
-.header__checkbox:focus:not(:disabled) + label {
+.header__checkbox:focus-visible:not(:disabled) + label {
   outline: 2px solid $color-alice-blue;
   border-radius: 2px;
 }
 
-.header__checkbox:checked:focus:not(:disabled) + label {
+.header__checkbox:checked:focus-visible:not(:disabled) + label {
   outline: 2px solid rgba($color-tangaroa, 0.8);
 }
 
