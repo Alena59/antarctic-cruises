@@ -190,3 +190,8 @@
     }
   }
 }
+
+.header__checkbox:hover:not(:disabled) + label {
+  opacity: 0.8;
+  transition: opacity $trans-default;
+}

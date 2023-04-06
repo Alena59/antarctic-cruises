@@ -784,6 +784,13 @@ button,
   outline: 2px solid rgba(1, 28, 64, 0.8);
 }
 
+.header__checkbox:hover:not(:disabled) + label {
+  opacity: 0.8;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
 .nav__list {
   list-style-type: none;
   padding: 9px 0 0;
