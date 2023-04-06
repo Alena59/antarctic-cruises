@@ -225,6 +225,10 @@ input[type="checkbox"]:checked + label::before {
 
 .booking__checkbox .error-message {
   bottom: -22px;
+
+  @include vp-767 {
+    bottom: -19px;
+  }
 }
 
 .booking__btn {
