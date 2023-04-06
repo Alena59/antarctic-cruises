@@ -1,5 +1,5 @@
 let header = document.querySelector('.header');
-let navToggle = document.querySelector('.header__toggle');
+let headerToggle = document.querySelector('.header__checkbox');
 const body = document.getElementById('body');
 const link = document.querySelectorAll('.header__nav a');
 const logo = document.querySelector('.header__link-logo');
@@ -13,9 +13,10 @@ lastFocus = document.activeElement;
 
 function focus(e) {
   if (e.keyCode === 9) {
-    let focusable = header.querySelectorAll('a, button');
+    let focusable = header.querySelectorAll('a, input');
     if (focusable.length) {
       let first = focusable[0];
+
       let last = focusable[focusable.length - 1];
       let shift = e.shiftKey;
       if (shift) {
@@ -35,12 +36,12 @@ function focus(e) {
 
 const deactiveMenu = () => {
   body.style.overflow = 'scroll';
-  header.classList.add('is-close');
   header.classList.remove('is-open');
+  headerToggle.checked = false;
 };
 
 function initMenu() {
-  if (link && logo && navToggle && header && body) {
+  if (link && logo && headerToggle && header && body) {
     link.forEach((element) => {
       element.addEventListener('click', function () {
         if (header.classList.contains('is-open')) {
@@ -49,9 +50,8 @@ function initMenu() {
       });
     });
 
-    navToggle.addEventListener('click', function () {
-      if (header.classList.contains('is-close')) {
-        header.classList.remove('is-close');
+    headerToggle.addEventListener('click', function () {
+      if (headerToggle.getAttribute('type') === 'checkbox' && headerToggle.checked === true) {
         header.classList.add('is-open');
         body.style.overflow = 'hidden';
         logo.focus();
@@ -59,7 +59,6 @@ function initMenu() {
         header.addEventListener('keydown', focus);
 
       } else {
-        header.classList.add('is-close');
         header.classList.remove('is-open');
         body.style.overflow = 'scroll';
         header.removeEventListener('keydown', focus);

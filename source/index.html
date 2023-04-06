@@ -14,7 +14,7 @@
   </head>
   <body id="body">
     <div class="wrapper">
-      <header class="header is-close is-nojs">
+      <header class="header">
         <picture>
           <source type="image/webp" media="(max-width: 767px)" srcset="img/intro/intro-mob.webp 1x, img/intro/intro-mob@2x.webp 2x">
           <source type="image/webp" media="(max-width: 1023px)" srcset="img/intro/intro-tab.webp 1x, img/intro/intro-tab@2x.webp 2x">
@@ -24,12 +24,14 @@
           <img src="img/intro/intro-desk.jpg" srcset="img/intro/intro-desk.jpg@2x 2x" width="1366" height="650" alt="Фото Антарктики.">
         </picture>
         <div class="container header__container">
-          <a class="header__link-logo" href="index.html">
+          <input class="header__checkbox visually-hidden" type="checkbox" id="checkbox" aria-label="Открыть меню.">
+          <label class="header__label" for="checkbox"></label>
+          <a class="header__link-logo" href="index.html" tabindex="1">
             <svg class="header__logo-icon" width="70" height="38">
               <use xlink:href="./img/sprite.svg#logo"></use>
             </svg>
           </a>
-          <nav class="header__nav nav">
+          <nav class="nav header__nav">
             <ul class="nav__list header__nav-list">
               <li class="nav__item">
                 <a href="#advantages">Преимущества</a>
@@ -45,9 +47,6 @@
               </li>
             </ul>
           </nav>
-          <button class="header__toggle btn" type="button">
-            <span class="visually-hidden">Открыть меню.</span>
-          </button>
         </div>
         <section class="intro">
           <div class="container">
