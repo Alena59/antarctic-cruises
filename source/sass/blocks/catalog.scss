@@ -59,7 +59,7 @@
   cursor: pointer;
   overflow: hidden;
 
-  @include hover-focus {
+  &:hover {
     & img {
       display: none;
       z-index: -1;

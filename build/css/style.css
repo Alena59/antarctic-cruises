@@ -1009,12 +1009,12 @@ button,
   overflow: hidden;
 }
 
-.catalog__item.focus-visible:focus img {
+.catalog__item:hover img {
   display: none;
   z-index: -1;
 }
 
-.catalog__item.focus-visible:focus h3 {
+.catalog__item:hover h3 {
   margin: 0 0 12px 0;
   -webkit-box-ordinal-group: 0;
   -ms-flex-order: -1;
@@ -2189,18 +2189,6 @@ label[for=booking-agreement]:hover:not(:focus, :disabled) {
 
   .nav a:hover:not(.focus-visible) {
     opacity: 0.8;
-  }
-
-  .catalog__item:hover:not(.focus-visible) img {
-    display: none;
-    z-index: -1;
-  }
-
-  .catalog__item:hover:not(.focus-visible) h3 {
-    margin: 0 0 12px 0;
-    -webkit-box-ordinal-group: 0;
-    -ms-flex-order: -1;
-    order: -1;
   }
 
   .footer__link-logo:hover:not(.focus-visible) {
